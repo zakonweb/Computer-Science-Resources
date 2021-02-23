@@ -1,0 +1,18 @@
+FORMAT 1 (SIMPLE COUNT BASED LOOPS):
+
+Initialise
+For Count ← 1 TO n
+   INPUT ...
+
+   Formula Calculation
+   OUTPUT Formula Calculations Result
+
+   Totaling (Total = Total + ...)
+   Counting with decision (c1)
+   OUTPUT with decision
+
+   Extreme Values
+Next Count
+Avg ← Total/n
+Per ← (c1/n)*100
+OUTPUT...

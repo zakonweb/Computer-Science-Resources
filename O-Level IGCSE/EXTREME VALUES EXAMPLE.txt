@@ -1,0 +1,26 @@
+Iteration/Loop/Repetition
+CONSTRUCT
+------------------------
+Count based loops
+------------------------
+
+highest ← -1000
+lowest ← 1000
+n ← 0
+FOR Count ← 1 TO 6
+   INPUT "Enter next value: ", n
+   IF n > highest THEN highest ← n
+   IF n < lowest THEN lowest ← n
+NEXT 
+OUTPUT "Highest = " + highest
+OUTPUT "Lowest = " + lowest
+
+
+
+
+
+
+
+
+
+
