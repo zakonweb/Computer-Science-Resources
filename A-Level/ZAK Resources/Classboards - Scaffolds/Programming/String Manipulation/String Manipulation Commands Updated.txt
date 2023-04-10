@@ -1,0 +1,60 @@
+STRING MANIPULATION FUNCTIONS:
+
+DECLARE X : STRING
+
+    14.....87654321
+X ← "Zafar Ali Khan"
+     123456789....14
+
+Function Use		Output		Output Type
+------------		------		-----------
+a ← LEN(X)		14		INT
+
+Extractions:
+b ← LEFT(X,5)		"Zafar"		STRING
+c ← RIGHT(X,4)		"Khan"		STRING
+d ← MID(X,7,3)		"Ali"		STRING
+
+Seraching patterns/characters:
+VB.net: InStr().	
+Pseudocode: LOCATE().
+e = InStr(X," ")	6		INT
+f = InStr(7,X," ")	10		INT
+
+e ← LOCATE(X,' ')	6		INT
+f ← LOCATE(e+1,X,' ')	10		INT
+
+Character set:
+g ← ASC('A')		65		INT
+h ← CHR(67)		'C'		CHAR
+
+Concatenation (To merge two or more strings)
+Pseudocode:
+i ← b + " " + c		"Zafar Khan"	STRING
+VB.net
+i = "Assad" & " " & c		"Assad Khan"	STRING
+
+Casting (Converting a data type into another data type)
+j ← STR(34)		"34"		STRING
+k ← VAL("123.5")	123.5		INT/REAL/CURR
+
+m ← UPPER("asdf")	"ASDF"		STRING
+n ← LOWER("ZAFAR")	"zafar"		STRING
+
+
+DECLARE a : INTEGER
+a ← 10
+00000000 00000000 00000000 00001010
+
+DECLARE b : STRING
+b ← "10"
+00110001 00110000
+
+print a
+10
+
+print b
+10
+
+b ← STR(15)
+a ← VAL(b)

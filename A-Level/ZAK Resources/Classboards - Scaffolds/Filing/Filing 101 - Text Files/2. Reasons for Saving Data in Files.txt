@@ -1,0 +1,11 @@
+Understanding the *Reasons for Saving Data in Files* for Programs:
+
+Storing data in a file is important for different reasons when using a program. Here are the main benefits of saving information in a file:
+
+Long-lasting Data: Files keep the data safe and available even after the program is closed or the computer is turned off. This means your information won't be lost when you stop using the program.
+
+Sharing Data: Files make it simple to share information between different programs, devices, or with your friends. Standard file formats allow many applications to read and use the same data.
+
+Handling More Data: Programs can work with a lot of data by using files, without needing too much memory or processing power. Files let the program read and write small parts of the data at a time, which makes it easier for the computer to handle.
+
+Easy Backup: Saving data in files allows you to make a backup copy, so you can recover your information if something goes wrong or gets deleted accidentally.

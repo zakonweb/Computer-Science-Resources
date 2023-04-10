@@ -1,0 +1,279 @@
+Pseudocode for inputting data from user with proper prompts and writing it to file one field per record for mentioned fields:
+
+// Declare variables
+DECLARE StuID, StuName, StuClass, StuFee, anotherStudent : STRING
+DECLARE outputFile : STRING
+
+// Initialize output file name
+outputFile = "students.txt" //File Identifier
+
+// Open output file for writing
+OPENFILE outputFile FOR WRITE
+
+// Input loop
+REPEAT
+  // Prompt and input StuID
+  OUTPUT "Enter Student ID: "
+  INPUT StuID
+
+  // Prompt and input StuName
+  OUTPUT "Enter Student Name: "
+  INPUT StuName
+
+  // Prompt and input StuClass
+  OUTPUT "Enter Student Class: "
+  INPUT StuClass
+
+  // Prompt and input StuFee
+  OUTPUT "Enter Student Fee: "
+  INPUT StuFee
+
+  // Write fields to output file
+  WRITEFILE outputFile, StuID
+  WRITEFILE outputFile, StuName
+  WRITEFILE outputFile, StuClass
+  WRITEFILE outputFile, StuFee
+
+  // Check if there are more students
+  OUTPUT "Would you like to enter another student? (Y/N)"
+  INPUT anotherStudent
+UNTIL anotherStudent = "N"
+
+// Close output file
+CLOSEFILE outputFile
+------------------------------------------------------------------------
+
+Pseudocode for inputting data from user with proper prompts and writing it to file one line per record for above mentioned fields.
+
+// Declare variables
+DECLARE StuID, StuName, StuClass, StuFee, anotherStudent, record : STRING
+DECLARE outputFile : STRING
+
+// Initialize output file name
+outputFile = "students.txt"
+
+// Open output file for writing
+OPENFILE outputFile FOR WRITE
+
+// Input loop
+REPEAT
+  // Prompt and input StuID
+  OUTPUT "Enter Student ID: "
+  INPUT StuID
+
+  // Prompt and input StuName
+  OUTPUT "Enter Student Name: "
+  INPUT StuName
+
+  // Prompt and input StuClass
+  OUTPUT "Enter Student Class: "
+  INPUT StuClass
+
+  // Prompt and input StuFee
+  OUTPUT "Enter Student Fee: "
+  INPUT StuFee
+
+  // Combine fields into a single record
+  record = StuID + ',' + StuName + ',' + StuClass + ',' + StuFee
+
+  // Write the record to the output file
+  WRITEFILE outputFile, record
+
+  // Check if there are more students
+  OUTPUT "Would you like to enter another student? (Y/N)"
+  INPUT anotherStudent
+UNTIL anotherStudent = "N"
+
+// Close output file
+CLOSEFILE outputFile
+-----------------------------------------------------------
+
+Outputting all records from one field per line file
+
+// Declare variables
+DECLARE StuID, StuName, StuClass, StuFee : STRING
+DECLARE inputFile : STRING
+DECLARE endOfFile : BOOLEAN   //FLAG
+
+// Initialize input file name
+inputFile = "students.txt"
+
+// Open input file for reading
+OPENFILE inputFile FOR READ
+
+// Set endOfFile to false
+endOfFile = FALSE
+
+// Output loop
+WHILE NOT endOfFile
+  // Read fields from input file
+  READFILE inputFile, StuID
+  READFILE inputFile, StuName
+  READFILE inputFile, StuClass
+  READFILE inputFile, StuFee
+
+  // Check for end of file
+  IF StuID = "" OR StuName = "" OR StuClass = "" OR StuFee = "" THEN
+    endOfFile = TRUE
+  ELSE
+    // Output the student record
+    OUTPUT "Student ID: ", StuID
+    OUTPUT "Student Name: ", StuName
+    OUTPUT "Student Class: ", StuClass
+    OUTPUT "Student Fee: ", StuFee
+    OUTPUT "---------------------"
+  ENDIF
+ENDWHILE
+
+// Close input file
+CLOSEFILE inputFile
+------------------------------------------------------------
+
+Outputting all records from one record per line file
+
+
+// Declare variables
+DECLARE StuID, StuName, StuClass, StuFee, record : STRING
+DECLARE inputFile : STRING
+DECLARE endOfFile : BOOLEAN
+
+// Initialize input file name
+inputFile = "students.txt"
+
+// Open input file for reading
+OPENFILE inputFile FOR READ
+
+// Set endOfFile to false
+endOfFile = FALSE
+
+// Output loop
+WHILE NOT endOfFile
+  // Read the record from input file
+  READFILE inputFile, record
+
+  // Check for end of file
+  IF record = "" THEN
+    endOfFile = TRUE
+  ELSE
+    // Split the record into fields
+    SPLIT record BY ',' INTO StuID, StuName, StuClass, StuFee
+
+    // Output the student record
+    OUTPUT "Student ID: ", StuID
+    OUTPUT "Student Name: ", StuName
+    OUTPUT "Student Class: ", StuClass
+    OUTPUT "Student Fee: ", StuFee
+    OUTPUT "---------------------"
+  ENDIF
+ENDWHILE
+
+// Close input file
+CLOSEFILE inputFile
+----------------------------------------------
+
+Search file for one field per line file
+
+// Declare variables
+DECLARE StuID, StuName, StuClass, StuFee, searchID : STRING
+DECLARE inputFile : STRING
+DECLARE endOfFile, recordFound : BOOLEAN   //FALGs
+
+// Initialize input file name
+inputFile = "students.txt"
+
+// Prompt and input searchID
+OUTPUT "Enter the Student ID to search: "
+INPUT searchID
+
+// Open input file for reading
+OPENFILE inputFile FOR READ
+
+// Set endOfFile and recordFound to false
+endOfFile = FALSE
+recordFound = FALSE
+
+// Search loop
+WHILE NOT endOfFile AND NOT recordFound
+  // Read fields from input file
+  READFILE inputFile, StuID
+  READFILE inputFile, StuName
+  READFILE inputFile, StuClass
+  READFILE inputFile, StuFee
+
+  // Check for end of file
+  IF StuID = "" OR StuName = "" OR StuClass = "" OR StuFee = "" THEN
+    endOfFile = TRUE
+  ELSE
+    // Check if the searchID matches the current record's StuID
+    IF StuID = searchID THEN
+      recordFound = TRUE
+    ENDIF
+  ENDIF
+ENDWHILE
+
+// Output the search result
+IF recordFound = TRUE THEN
+  OUTPUT "Student ID: ", StuID
+  OUTPUT "Student Name: ",StuName
+  OUTPUT "Student Class: ", StuClass
+  OUTPUT "Student Fee: ", StuFee
+ELSE
+  OUTPUT "Student not found."
+ENDIF
+
+// Close input file
+CLOSEFILE inputFile
+-------------------------------------------------------
+
+Search file with one record per line.
+
+// Declare variables
+DECLARE StuID, StuName, StuClass, StuFee, searchID, record : STRING
+DECLARE inputFile : STRING
+DECLARE endOfFile, recordFound : BOOLEAN
+
+// Initialize input file name
+inputFile = "students.txt"
+
+// Prompt and input searchID
+OUTPUT "Enter the Student ID to search:"
+INPUT searchID
+
+// Open input file for reading
+OPENFILE inputFile FOR READ
+
+// Set endOfFile and recordFound to false
+endOfFile = FALSE
+recordFound = FALSE
+
+// Search loop
+WHILE NOT endOfFile AND NOT recordFound
+  // Read the record from input file
+  READFILE inputFile, record
+
+  // Check for end of file
+  IF record = "" THEN
+    endOfFile = TRUE
+  ELSE
+    // Split the record into fields
+    SPLIT record BY ',' INTO StuID, StuName, StuClass, StuFee
+
+    // Check if the searchID matches the current record's StuID
+    IF StuID = searchID THEN
+      recordFound = TRUE
+    ENDIF
+  ENDIF
+ENDWHILE
+
+// Output the search result
+IF recordFound = TRUE THEN
+  OUTPUT "Student ID: " + StuID
+  OUTPUT "Student Name: " + StuName
+  OUTPUT "Student Class: " + StuClass
+  OUTPUT "Student Fee: " + StuFee
+ELSE
+  OUTPUT "Student not found."
+ENDIF
+
+// Close input file
+CLOSEFILE inputFile

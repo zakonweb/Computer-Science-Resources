@@ -1,0 +1,46 @@
+QUESTIONS:
+-------------
+1.	What is the purpose of using files in computer programming?
+
+2.	Name the different modes for opening a file in a program.
+
+3.	Explain what happens when you open a file in 'WRITE' mode if the file already exists?
+
+4.	Why is it important to close a file after finishing operations like reading or writing?
+
+5.	How can you check if you have reached the end of a file while reading its contents?
+
+6.	In the context of the provided pseudocodes, what is the significance of using a loop while reading or writing data to a file?
+
+7.	How would you differentiate between a file with one field per line and a file with one record per line?
+
+8.	Explain the purpose of the SPLIT command in the pseudocodes provided for one record per line files.
+
+9.	What is the purpose of using a unique file extension for custom file types created by your own software program?
+
+10.	Why is it essential to use proper prompts while inputting data from a user in a program?
+--------------------------------------------
+
+ANSWERS:
+---------
+1.	The purpose of using files in computer programming is to store and manage data persistently, allowing for data retrieval and modification even after the program has stopped running. Files enable programs to save, read, and process various types of data such as text, images, or audio.
+
+2.	The different modes for opening a file in a program include:
+•	READ: To read data from a file
+•	WRITE: To write data to a file (creates a new file or overwrites an existing one)
+
+3.	When you open a file in 'WRITE' mode, if the file already exists, its previous contents will be erased, and the file will be overwritten with new data.
+
+4.	It is important to close a file after finishing operations like reading or writing to ensure that all changes are saved, system resources are released, and potential data corruption is avoided.
+
+5.	You can check if you have reached the end of a file while reading its contents by detecting an empty or incomplete record (e.g., missing fields) or by monitoring for a specific end-of-file marker (if used).
+
+6.	In the context of the provided pseudocodes, using a loop while reading or writing data to a file helps process multiple records efficiently. Loops automate repetitive tasks and make the code more concise and easier to understand.
+
+7.	A file with one field per line stores each field of a record on a separate line in the file. In contrast, a file with one record per line stores all fields of a record on a single line, typically separated by a delimiter such as a comma.
+
+8.	The purpose of the SPLIT command in the pseudocodes provided for one record per line files is to separate the fields within a record. SPLIT helps extract individual field values from a single line that contains multiple fields separated by a delimiter.
+
+9.	Using a unique file extension for custom file types created by your own software program allows you to differentiate your file format from standard file formats. This makes it easier to identify and handle your custom files within your software.
+
+10.	Proper prompts while inputting data from a user in a program are essential for clear communication and ensuring that users provide accurate information. Well-designed prompts guide users through the data input process, making it more user-friendly and minimizing the chances of input errors.

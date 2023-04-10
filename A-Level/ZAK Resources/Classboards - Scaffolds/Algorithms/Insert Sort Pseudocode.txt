@@ -1,0 +1,38 @@
+//PSEUDOCODE - Insert Sort
+PROCEDURE InsertSort(arr)
+  DECLARE redP, whiteP, Temp, i : INTEGER
+
+  redP ← 1
+  whiteP ← 0
+  Temp ← 0
+  i ← 0
+ 
+  For redP ← 1 to LEN(arr) -1
+    For whiteP ← 0 to redP -1
+      IF arr[redP] < arr[whiteP]
+        THEN
+          Temp ← arr[redP]
+          For i ← redP to whiteP +1 STEP -1
+             arr[i] ← arr[i-1]
+          Next i
+          arr[whiteP] ← Temp
+          Exit For
+      END IF
+    Next whiteP
+  Next redP
+END PROCEDURE
+
+DECLARE arr : ARRAY [0:7] OF INTEGER
+arr[] ← {3,7,8,11,15,19,35,40}
+//OUTPUT Array before Sort
+FOR i  =0 to LEN(arr[])
+  OUTPUT arr[i]
+Next i
+
+insertSort(arr)
+
+//OUTPUT Array after Sort
+FOR i  =0 to LEN(arr[])
+  OUTPUT arr[i]
+Next i
+

@@ -1,0 +1,136 @@
+Explanation and Pseudocode Examples for File Operations:
+
+OPENFILE: Opens the file with the specified mode (READ or WRITE).
+READ: Opens the file for reading data.
+WRITE: Opens the file for writing data. Creates a new file, overwriting existing data.
+
+Example:
+OPENFILE "students.txt" FOR READ
+OPENFILE "newStudents.txt" FOR WRITE
+
+READFILE: Reads data from the opened file and assigns it to a variable.
+Example for one field per line:
+
+DECLARE StuID, StuName, StuClass, StuFee : STRING
+READFILE students.txt, StuID
+READFILE students.txt, StuName
+READFILE students.txt, StuClass
+READFILE students.txt, StuFee
+
+//Record structure:
+1
+Zafar
+OL-A
+5263
+2
+Ahmed
+OL-C
+5000
+
+WRITEFILE newStudents.txt, StuID
+WRITEFILE newStudents.txt, StuName
+WRITEFILE newStudents.txt, StuClass
+WRITEFILE newStudents.txt, StuFee
+--------------------------------------------------------
+
+Example for merged fields per line (comma-separated):
+DECLARE record, StuID, StuName, StuClass, StuFee : STRING
+READFILE students.txt, record
+
+//Record structure
+record = "1,Zafar,OL-A,5263"
+         "2,Ahmed,OL-C,5000"
+
+//SPLIT record BY ',' INTO StuID, StuName, StuClass, StuFee
+record = StuID + ',' + StuName + ',' + StuClass + ',' + StuFee
+WRITEFILE newStudents.txt, record
+
+
+CLOSEFILE: Closes the opened file, freeing up resources and saving changes.
+Example:
+CLOSEFILE students.txt
+CLOSEFILE newStudents.txt
+
+Remember to use loops when reading or writing multiple records. These examples demonstrate how to read and write single records in both one field per line and merged fields per line formats. For multiple records, simply incorporate loops to iterate through each record as needed.
+-----------------------------------------------------------------------
+
+complete example codes:
+*Pseudocode Example 1: One Field per Line*
+
+// Declare variables
+DECLARE StuID, StuName, StuClass, StuFee, anotherStudent : STRING
+DECLARE inputFile, outputFile : STRING
+
+// Initialize file names
+inputFile = "students.txt"
+outputFile = "newStudents.txt"
+
+// Open files
+OPENFILE inputFile FOR READ
+OPENFILE outputFile FOR WRITE
+
+// Input, process, and output loop
+REPEAT
+  // Read fields from input file
+  READFILE inputFile, StuID
+  READFILE inputFile, StuName
+  READFILE inputFile, StuClass
+  READFILE inputFile, StuFee
+  
+  // Process fields (if necessary)
+  
+  // Write fields to output file
+  WRITEFILE outputFile, StuID
+  WRITEFILE outputFile, StuName
+  WRITEFILE outputFile, StuClass
+  WRITEFILE outputFile, StuFee
+  
+  // Check if there are more students
+  PRINT "Is there another student? (Y/N)"
+  INPUT anotherStudent
+UNTIL anotherStudent = "N"
+
+// Close files
+CLOSEFILE inputFile
+CLOSEFILE outputFile
+
+Pseudocode Example 2: Combined Fields (comma-separated):
+// Declare variables
+DECLARE StuID, StuName, StuClass, StuFee, anotherStudent, record : STRING
+DECLARE inputFile, outputFile : STRING
+
+// Initialize file names
+inputFile = "students.txt"
+outputFile = "newStudents.txt"
+
+// Open files
+OPENFILE inputFile FOR READ
+OPENFILE outputFile FOR WRITE
+
+// Input, process, and output loop
+REPEAT
+  // Read record from input file
+  READFILE inputFile, record
+  
+  // Split record into fields
+  SPLIT record BY ',' INTO StuID, StuName, StuClass, StuFee
+  
+  // Process fields (if necessary)
+  
+  // Combine fields into record
+  record = StuID + ',' + StuName + ',' + StuClass + ',' + StuFee
+  
+  // Write record to output file
+  WRITEFILE outputFile, record
+  
+  // Check if there are more students
+  PRINT "Is there another student? (Y/N)"
+  INPUT anotherStudent
+UNTIL anotherStudent = "N"
+
+// Close files
+CLOSEFILE inputFile
+CLOSEFILE outputFile
+
+------------------------------------------------------
+These examples demonstrate how to read and write student records in both one field per line and combined fields per line (comma-separated) formats. The loops allow processing multiple records, and you can customize the process step as needed for your specific use case.

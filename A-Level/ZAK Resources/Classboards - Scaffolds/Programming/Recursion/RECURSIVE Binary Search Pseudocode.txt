@@ -1,0 +1,17 @@
+FUNCTION recBinSearch(arr[], ub : INT, lb : INT , data : CHARACTER) OF INTEGER
+    DECLARE mid : INTEGER
+    mid ← (ub + lb) DIV 2
+
+    IF lb > ub
+      THEN
+        RETURN -1
+    ELSEIF arr[mid] = data
+      THEN
+         RETURN mid
+    ELSEIF arr[mid] < data
+      THEN
+        RETURN recBinSearch(arr, ub, mid +1, data)
+    ELSE:
+        RETURN recBinSearch(arr, mid -1, lb, data)
+    END IF
+END FUNCTION

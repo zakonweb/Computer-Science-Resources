@@ -1,0 +1,32 @@
+A flat file in the school holds students data in following "data items":
+StuID, StuName, StuClass, StuFee
+-----------------------------------
+What is data item?
+Every single data belong to any of the above fields.
+
+A flat file system is a simple way to organize and store data. In this system, each data item (or field) is saved on a separate line, and multiple fields are sometimes combined to create a record. Each record is saved as a line of text in a file. Let's see how we can use the commands mentioned earlier to work with flat files:
+
+1.	OPEN: First, we need to open the file. This can be for reading, writing, or appending data. For example, you can open a file called "students.txt" that contains student records.
+
+	OPENFILE <File identifier> FOR <File mode>
+
+The file identifier will be the name of the file with data type string. The following file modes are used:
+
+• READ for data to be read from the file
+• WRITE for data to be written to the file. A new file will be created and any existing data in the file will be lost.
+
+2.	WRITE: To add a new record, we'll write the data fields one by one, each on a new line. For example, if we want to store a student's name, age, and grade, we'll write these fields line by line in the file.
+
+
+3.	WRITE LOOP: If we have multiple records to add, we'll use a loop to write each record one by one. We'll first write the name, then the age, and finally the grade for each student, creating a new line for each field.
+	WRITEFILE <File identifier>, <Variable>
+
+4.	READ: To read the data from the file, we'll start by opening the file for reading. Then, we'll read each line and store the data in appropriate variables. For example, we can read the student's name, age, and grade from the "students.txt" file.
+
+5.	READ LOOP: If there are multiple records to read, we'll use a loop to read each record one by one. We'll read the name, age, and grade for each student, storing the data in variables and processing it as needed.
+	READFILE <File Identifier>, <Variable>
+
+6.	CLOSE: Once we've finished reading or writing data, we'll close the file to free up resources and ensure that all changes are saved properly.
+
+By using these commands and a flat file system, you can easily store and manage data items in a simple, organized, and accessible manner. This approach is suitable for small-scale applications or situations where a more complex database system is not required.
+

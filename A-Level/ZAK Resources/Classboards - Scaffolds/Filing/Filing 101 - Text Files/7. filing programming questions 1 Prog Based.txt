@@ -1,0 +1,23 @@
+Not neccesary questions for OL......
+Progrmming questions:
+1.	Write a pseudocode to add a new student record to an existing file containing student records, where each field is stored on a separate line. Ensure that the new record is added at the end of the file.
+
+2.	Write a pseudocode to delete a specific student record from a file containing student records, where each record is stored on a single line separated by commas. Print a message confirming the deletion of the record.
+
+3.	Write a pseudocode to update a specific student record in a file containing student records, where each field is stored on a separate line. Prompt the user for the updated information and save the changes to the file.
+
+4.	Write a pseudocode to calculate the average student fee from a file containing student records, where each record is stored on a single line separated by commas. Display the calculated average on the screen.
+
+5.	Write a pseudocode to find the total number of students in a specific class from a file containing student records, where each field is stored on a separate line. Display the total count on the screen.
+
+(Strictly NON OL question)
+6.	Write a pseudocode to list all student records from a file containing student records, where each record is stored on a single line separated by commas, sorted by Student Name in ascending order.
+
+7.	Write a pseudocode to find and display the student with the highest fee from a file containing student records, where each field is stored on a separate line.
+
+8.	Write a pseudocode to search for and display all student records that match a specific class and have a fee less than a given amount from a file containing student records, where each record is stored on a single line separated by commas.
+
+9.	Write a pseudocode to copy all student records from one file containing student records, where each field is stored on a separate line, to another file with the same format.
+
+10.	Write a pseudocode to merge two files containing student records, where each record is stored on a single line separated by commas, into a single file without duplicate records.
+

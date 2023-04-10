@@ -1,0 +1,4 @@
+Database- Indexing:
+In RDBMS every record has a key field (PK), which helps it to be recognized uniquely. Indexing is a data structure technique to efficiently retrieve records from the database files based on some attributes, like PKs, on which the indexing has been done.
+
+An index is just a data structure that makes the searching faster for a specific column, like PK, in a database table. This structure is usually a binary-tree but it can also be a hash table or some other logic structure.

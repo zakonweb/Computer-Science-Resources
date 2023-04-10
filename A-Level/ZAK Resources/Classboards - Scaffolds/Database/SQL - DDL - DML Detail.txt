@@ -1,0 +1,16 @@
+Structured Query Language (SQL) Pronounced as SeeQuel
+
+- Data Manipulation Language (DML)
+  Its all about records 
+	-INSERT INTO
+        -UPDATE SET
+        -DELETE FROM
+        -SELECT 	*Very Important
+
+- Data Definition Language (DDL)
+	-CREATE // CREATE Database // CREATE TABLE 
+
+	-DROP   // DROP Database // DROP TABLE
+
+ 	-ALTER  //ALTER TABLE ADD COLUMN// //ALTER TABLE MODIFY COLUMN
+               //ALTER TABLE DROP COLUMN

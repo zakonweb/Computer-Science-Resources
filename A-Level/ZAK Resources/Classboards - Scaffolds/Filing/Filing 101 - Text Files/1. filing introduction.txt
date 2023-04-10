@@ -1,0 +1,27 @@
+*Introducing File Concepts:*
+
+A file refers to a digital entity used for storing various forms of data, including pictures, spreadsheets, or even executable programs.
+
+These files are saved on secondary storage devices, like hard drives, external hard drives, CDs, USB flash drives, and so on.
+
+When a file is created, it is given a name or <File identifier>, often accompanied by an extension that indicates the type of data it contains to both the computer and the user. For instance:
+
+                 TextFile.txt   (contains textual data)
+                 ImageFile.jpg  (contains visual data)
+                 AudioFile.mp3  (contains music or sound data)
+                 VideoFile.mpg  (contains video and audio data)
+
+Technically, files can exist without extensions and still be accessible. However, if you attempt to open a file with an unknown format using an incompatible application, you'll only see unintelligible characters.
+
+Numerous standard file formats exist. These formats, such as mp3, are widely used by a plethora of applications since their data structure is publicly accessible.
+
+It's also possible to develop a unique file format with custom software and assign it a distinct extension, like:
+
+                 UniqueFile.custom
+
+The software that generated the UniqueFile.custom file formats the data according to its requirements.
+
+In the subsequent pseudocodes, we will explore how programmers can open, close, read, and write files.
+
+File Operations:
+OPEN, CLOSE, WRITE, WRITE LOOP, READ, READ LOOP
