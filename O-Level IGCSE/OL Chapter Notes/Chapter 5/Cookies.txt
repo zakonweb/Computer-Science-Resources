@@ -1,0 +1,19 @@
+Cookies are small text files that are created by websites and stored on a user's device (such as a computer or mobile device) by their web browser. They are used to store information about a user's browsing behavior on a particular website, such as login credentials, preferences, and shopping cart items.
+
+There are two main types of cookies:
+
+1. Session cookies: Session cookies are temporary and are only stored on the user's device while they are actively browsing a website. They are typically used to remember information about the user's session, such as login credentials, preferences, or items in an online shopping cart. Once the user closes their web browser, the session cookie is deleted.
+
+2. Persistent cookies: Persistent cookies, as the name suggests, are stored on a user's device even after they close their web browser. They are used to remember user preferences and settings for future visits to the website. Persistent cookies are commonly used for website analytics, advertising, and tracking user behavior across different websites.
+
+Cookies are used for a variety of purposes, including:
+1. Saving personal details: Cookies can be used to store personal information such as name, address, and email, making it easier for users to fill out forms on the website in the future.
+
+2. Tracking user preferences: Cookies can be used to remember a user's preferences for a particular website, such as language, font size, or theme.
+
+3. Holding items in an online shopping cart: Cookies can be used to store items in a user's online shopping cart, allowing them to continue shopping without losing their previous selections.
+
+4. Storing login details: Cookies can be used to store login details, making it easier for users to access their accounts on a website without having to enter their username and password every time.
+
+In summary, cookies are small text files that are created by websites and stored on a user's device by their web browser. They are used to store information about a user's browsing behavior, preferences, and settings, and can be used for a variety of purposes such as saving personal details, tracking user preferences, holding items in an online shopping cart, and storing login details.
+

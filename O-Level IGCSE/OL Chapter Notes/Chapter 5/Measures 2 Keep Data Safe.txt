@@ -1,0 +1,23 @@
+There are several measures we can take to keep our data safe from security threats. Here are some common solutions:
+
+Access levels: Access levels are used to restrict access to certain data or areas of a system. This means that only authorized users with the appropriate level of clearance can access sensitive information or perform certain actions.
+
+Anti-malware: Anti-malware software, such as anti-virus and anti-spyware, helps protect against malicious software that can harm or compromise a system. This software scans for and removes viruses, spyware, and other types of malware.
+
+Authentication: Authentication refers to the process of verifying the identity of a user. This can be done through usernames and passwords, biometrics (such as fingerprint or facial recognition), or two-step verification (where a second authentication factor, such as a text message or code, is required).
+
+Automating software updates: Automating software updates helps ensure that systems and software are kept up-to-date with the latest security patches and fixes. This can help prevent vulnerabilities from being exploited by hackers.
+
+Checking the spelling and tone of communications: Hackers often use phishing techniques to trick people into giving up their personal information. By checking the spelling and tone of communications, we can identify suspicious emails or messages and avoid falling victim to these types of attacks.
+
+Checking the URL attached to a link: Hackers may send links to fake websites that look like legitimate ones in order to steal personal information. By checking the URL attached to a link, we can ensure that we are visiting a legitimate website.
+
+Firewalls:    .
+
+Privacy settings: Privacy settings are used to control what information is shared with others online. By adjusting these settings, we can limit the amount of personal information that is publicly available.
+
+Proxy-servers: Proxy servers act as intermediaries between a user and the internet. They can be used to hide a user's IP address and encrypt traffic, providing an additional layer of security.
+
+Secure socket layer (SSL) security protocol: SSL is a security protocol used to encrypt data as it's transmitted between a user's computer and a website. This helps prevent unauthorized access to sensitive information.
+
+By using these solutions, we can help protect our data from security threats and ensure that our systems and information remain safe and secure.
