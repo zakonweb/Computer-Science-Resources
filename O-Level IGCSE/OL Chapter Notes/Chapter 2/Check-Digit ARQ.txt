@@ -1,0 +1,15 @@
+Check Digits
+Check digits are used to detect errors in data entry, such as when scanning barcodes or entering International Standard Book Numbers (ISBNs). A check digit is calculated from the other digits in the data using a specific algorithm and is added to the data. When the data is entered, the check digit is recalculated and compared with the original check digit. If they do not match, an error is detected.
+
+Examples of check digit usage include:
+
+i. ISBN: The check digit in an ISBN ensures that the book's identification number is accurate and error-free.
+
+ii. Barcodes: Check digits in barcodes help verify the accuracy of the scanned data, reducing the chances of incorrect data entry.
+
+Automatic Repeat Query (ARQ)
+ARQ is a method used to ensure that data is received without errors by requesting retransmission when errors are detected. ARQ uses the following mechanisms:
+
+i. Positive/Negative Acknowledgements: The receiving device sends a positive acknowledgement (ACK) if the data is received without errors or a negative acknowledgement (NAK) if an error is detected. The sender retransmits the data if a NAK is received.
+
+ii. Timeout: The sender waits for a predetermined amount of time to receive an ACK or NAK. If no response is received within the specified time, the sender assumes that the data or the acknowledgement was lost and retransmits the data.

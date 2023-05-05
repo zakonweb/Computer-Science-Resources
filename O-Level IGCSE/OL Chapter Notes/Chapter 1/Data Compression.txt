@@ -1,0 +1,14 @@
+Purpose and Need for Data Compression:
+Data compression reduces the size of a file, which has several advantages:
+
+Less bandwidth required: Smaller files need less bandwidth to transmit over networks.
+Less storage space required: Smaller files take up less space on storage devices.
+Shorter transmission time: Smaller files can be sent or received more quickly.
+Lossy and Lossless Compression Methods:
+There are two primary methods of data compression: lossy and lossless.
+
+Lossless Compression: This method reduces the file size without permanently losing any data. The original file can be fully restored from the compressed file. An example of lossless compression is Run Length Encoding (RLE), often used in image files like PNG.
+
+Lossy Compression: This method reduces the file size by permanently removing some data, usually in a way that is least perceptible to human senses. The compressed file cannot be fully restored to its original quality. Examples of lossy compression include reducing resolution or color depth in images, or discarding less important audio data in sound files like MP3.
+
+Lossy and lossless compression methods are chosen based on the specific requirements of the data, balancing between the need for smaller file sizes and the acceptable level of data loss or quality reduction.

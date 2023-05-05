@@ -10,6 +10,7 @@ Artificial intelligence (AI) is a subfield of computer science focused on creati
 • Learning and adaptation: AI systems can improve their performance over time by learning from experience, adjusting their algorithms, and adapting to new situations.
 
 3. Basic Operation and Components of AI Systems
+
 A. Expert Systems:
 Expert systems are AI programs designed to simulate the decision-making capabilities of a human expert in a specific domain. They consist of the following components:
 • Knowledge Base: A database containing facts, information, and expertise in a specific domain.

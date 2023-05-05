@@ -1,0 +1,28 @@
+Data Storage
+
+Understanding Data Storage Measurements:
+Data storage is measured using various units, based on binary (powers of 2) or decimal (powers of 10) systems. For this class, we will focus on binary-based units:
+
+Bit: The smallest unit of data storage, representing a single binary digit (0 or 1).
+Nibble: A group of 4 bits.
+Byte: A group of 8 bits.
+Kibibyte (KiB): 1 KiB = 1,024 bytes.
+Mebibyte (MiB): 1 MiB = 1,024 KiB.
+Gibibyte (GiB): 1 GiB = 1,024 MiB.
+Tebibyte (TiB): 1 TiB = 1,024 GiB.
+Pebibyte (PiB): 1 PiB = 1,024 TiB.
+Exbibyte (EiB): 1 EiB = 1,024 PiB.
+These units are used to measure the size of data storage devices or digital files.
+
+Calculating File Size for Image and Sound Files:
+Image File Size: To calculate the file size of an uncompressed image, use the formula:
+
+File size (in bytes) = Image Width (pixels) x Image Height (pixels) x Color Depth (bits per pixel) / 8
+
+Convert the file size to the desired units (e.g., KiB, MiB) by dividing by the appropriate power of 1024.
+
+Sound File Size: To calculate the file size of an uncompressed sound file, use the formula:
+
+File size (in bytes) = Sample Rate (samples per second) x Sample Resolution (bits per sample) x Length of Track (seconds) / 8
+
+Convert the file size to the desired units as before.

@@ -1,0 +1,43 @@
+Here are examples for each error detection method, check digit usage, and automatic repeat query (ARQ) mentioned in the previous lecture:
+
+Parity Check:
+(a) Odd Parity:
+Data: 1101
+Parity bit: 1 (to make the total number of 1s odd)
+Transmitted data: 11011
+
+(b) Even Parity:
+Data: 1101
+Parity bit: 0 (to make the total number of 1s even)
+Transmitted data: 11010
+
+Checksum:
+A simple example of checksum calculation is the summation of all byte values in the data.
+
+Data: 01100001 (97 in decimal), 01100010 (98 in decimal)
+Calculated checksum: 97 + 98 = 195
+Transmitted data: 01100001 01100010 11000011
+
+Echo Check:
+Suppose a sender transmits the following data to a receiver:
+Data: 10101010
+
+The receiver, after receiving the data, sends it back to the sender as an echo:
+Echo: 10101010
+
+The sender compares the echoed data with the original data and finds no discrepancies, confirming successful data transmission.
+
+Check Digits:
+(a) ISBN-10:
+An example ISBN-10 number: 0-306-40615-2
+The last digit (2) is the check digit. It is calculated using a weighted sum algorithm on the other digits.
+
+(b) Barcodes:
+A UPC-A barcode number: 6 39382 00034 2
+The last digit (2) is the check digit. It is calculated using a specific algorithm based on the other digits in the barcode.
+
+Automatic Repeat Query (ARQ):
+Suppose a sender transmits the following data to a receiver:
+Data: 11011010
+
+The receiver detects an error in the received data and sends a negative acknowledgement (NAK) to the sender. The sender, upon receiving the NAK, retransmits the data until it is received without errors, at which point the receiver sends a positive acknowledgement (ACK).

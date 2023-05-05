@@ -1,0 +1,45 @@
+Encryption in Data Transmission
+
+Introduction
+
+Encryption is a crucial aspect of secure communication and data protection. It helps maintain the confidentiality, integrity, and authenticity of transmitted data. This lecture will cover the need for and purpose of encryption, as well as the two primary methods of encryption: symmetric and asymmetric.
+
+The Need for and Purpose of Encryption
+Data transmitted over networks, especially public ones like the internet, is vulnerable to unauthorized access, interception, and tampering. Encryption is a method of converting data into an unreadable format (called ciphertext) using mathematical algorithms and keys. This process ensures that even if the data is intercepted, the attacker cannot understand or modify it without the appropriate decryption key.
+
+The main purposes of encryption include:
+
+(a) Confidentiality: Ensuring that only authorized parties can access and read the transmitted data.
+
+(b) Integrity: Verifying that the data has not been tampered with or altered during transmission.
+
+(c) Authentication: Confirming the identity of the parties involved in the communication, ensuring that data is exchanged between legitimate sources.
+
+Symmetric Encryption
+Symmetric encryption uses a single key, known as the secret key, for both encryption and decryption. The sender and receiver must securely share the secret key beforehand to communicate securely.
+
+Examples of symmetric encryption algorithms include Advanced Encryption Standard (AES), Data Encryption Standard (DES), and Triple DES (3DES).
+
+Pros:
+
+Faster and more efficient compared to asymmetric encryption, as it requires less computational power.
+Cons:
+
+Key management can be challenging, as each pair of communicating parties needs a unique secret key, which can lead to a large number of keys in a network.
+Securely sharing the secret key between parties can be difficult, as it must be transmitted or physically delivered without being intercepted or compromised.
+Asymmetric Encryption
+Asymmetric encryption, also known as public-key encryption, uses two distinct but mathematically related keys: a public key and a private key. The public key is openly shared and can be used by anyone to encrypt data, while the private key is kept secret by its owner and is used to decrypt the data.
+
+Examples of asymmetric encryption algorithms include RSA (Rivest-Shamir-Adleman) and Elliptic Curve Cryptography (ECC).
+
+Pros:
+
+Simplifies key management, as each user only needs a public-private key pair.
+Enables secure key exchange without the need for a secure communication channel.
+Cons:
+
+Slower and more computationally intensive compared to symmetric encryption.
+Inherently less secure for long-term storage, as the public key is openly available and could potentially be attacked over time.
+Conclusion
+
+Understanding the need for and purpose of encryption, as well as the differences between symmetric and asymmetric encryption, is essential for students to appreciate the importance of secure communication in today's digital world. It also serves as a foundation for understanding advanced topics in computer security and data protection.

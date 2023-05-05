@@ -1,0 +1,17 @@
+Images as Pixels:
+An image is made up of tiny squares called pixels, like a mosaic. Each pixel has a specific color, and when they all come together, they form the whole image. Computers need to convert these pixels into binary (1s and 0s) to understand, process, and store the image.
+
+Resolution:
+Resolution is the total number of pixels in an image. It is usually mentioned as width x height (e.g., 800x600). The more pixels an image has, the clearer and more detailed it will be. But keep in mind that more pixels also mean a larger file size, which can take up more storage space and longer time to load or send.
+
+Color Depth:
+Color depth is the number of bits (binary digits) used to represent the color of each pixel. More bits per pixel allow for more colors in the image, making it look more vibrant and realistic. However, using more bits for each pixel also increases the file size of the image.
+
+For example:
+
+1-bit: Black and white images (only two colors)
+8-bit: Grayscale images (256 shades of gray)
+24-bit: True color images (over 16 million colors)
+File Size and Quality:
+The quality and file size of an image depend on its resolution and color depth. Higher resolution and color depth generally result in better image quality, but they also lead to larger file sizes. To get the best image quality while keeping the file size manageable, you need to find the right balance between resolution and color depth for your specific needs.
+In summary, when a computer represents an image, it converts the image's pixels into binary data. The resolution and color depth of the image determine its quality and file size. Higher resolution and color depth lead to better image quality but also larger file sizes, so it's essential to find the right balance between them.

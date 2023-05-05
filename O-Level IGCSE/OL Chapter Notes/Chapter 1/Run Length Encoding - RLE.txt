@@ -1,0 +1,32 @@
+RLE, or Run Length Encoding, is a simple lossless compression technique used to store or transmit data more efficiently without losing any information. It's especially effective for compressing data with long runs of the same value, such as images with large areas of the same color or text with many repeating characters. Here's a description and example that's easy for 16-year-olds to understand:
+
+Imagine you have a string of text: AAAAAABBBBBCCCCC
+
+Instead of storing or transmitting the entire string, RLE compression groups the repeating characters and represents them as a pair: the character and the number of times it repeats. So, the compressed version of the string would look like this:
+
+A6B5C5
+
+This compressed string is shorter than the original, saving storage space or transmission time. To decompress the data, you simply read the pairs and expand them back to the original form:
+
+A6 -> AAAAAA
+B5 -> BBBBB
+C5 -> CCCCC
+
+Now, let's take a look at an example with an image. Imagine a simple 8x8 pixel image that has the following pattern (B for black, W for white):
+
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+BBBBBBBB
+WWWWWWWW
+WWWWWWWW
+WWWWWWWW
+WWWWWWWW
+
+In this case, RLE compression would represent the image like this:
+
+B32W32
+
+This compressed data is much shorter than writing out the entire 8x8 grid, which would require 64 characters. To decompress the image, you would simply expand the pairs back to their original form, resulting in the original 8x8 grid.
+
+Keep in mind that RLE is most effective when there are long runs of the same value. If the data has a more complex pattern, the compression may not be as efficient, and in some cases, the compressed data might even be longer than the original data.

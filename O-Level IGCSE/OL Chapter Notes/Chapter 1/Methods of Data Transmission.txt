@@ -1,0 +1,18 @@
+Methods of Data Transmission
+(a) Different Methods of Data Transmission
+
+Data can be transmitted using various methods, including:
+
+i. Serial transmission: In this method, data bits are transmitted one after the other over a single communication channel.
+
+ii. Parallel transmission: Data bits are transmitted simultaneously over multiple communication channels.
+
+iii. Simplex transmission: Data is transmitted in only one direction, from sender to receiver.
+
+iv. Half-duplex transmission: Data can be transmitted in both directions, but not simultaneously. Communication alternates between sending and receiving.
+
+v. Full-duplex transmission: Data can be transmitted in both directions simultaneously, allowing for faster communication.
+
+(b) Suitability of Each Method
+
+The choice of a data transmission method depends on the specific scenario and requirements. Some factors to consider include the distance between devices, the required transmission speed, and the available communication channels.

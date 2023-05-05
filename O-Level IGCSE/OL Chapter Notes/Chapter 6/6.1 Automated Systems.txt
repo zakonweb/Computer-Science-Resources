@@ -1,7 +1,7 @@
 I. Sensors, Microprocessors, and Actuators in Automated Systems
 
 A. Sensors 
-1. Devices that detect and measure physical properties 
+1. Devices that detect and measure physical properties or quantities
 2. Convert properties into electrical signals 
 3. Example: A temperature sensor in a smart thermostat system
 

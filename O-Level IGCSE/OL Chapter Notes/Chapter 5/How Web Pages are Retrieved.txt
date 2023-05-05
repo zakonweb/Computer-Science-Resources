@@ -1,3 +1,4 @@
+How webpages are retrieved:
 When a user enters a URL into a web browser, several steps are involved in locating, retrieving, and displaying the web page on the device. Here's a simplified step-by-step process:
 
 1. The web browser first checks its cache to see if it already has a copy of the web page. If it does, it displays the cached copy, which is faster than retrieving the page again from the internet.

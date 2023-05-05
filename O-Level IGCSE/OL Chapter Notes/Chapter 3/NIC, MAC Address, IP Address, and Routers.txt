@@ -1,0 +1,38 @@
+Network Hardware: NIC, MAC Address, IP Address, and Routers
+
+Introduction
+
+Networking plays a vital role in modern computing, enabling computers to communicate with each other and share resources. In this lecture, we will discuss essential network hardware components, such as Network Interface Cards (NICs), Media Access Control (MAC) addresses, Internet Protocol (IP) addresses, and routers. Understanding these components is crucial for students learning about computer networks and their functionality.
+
+Network Interface Card (NIC)
+A Network Interface Card (NIC) is a hardware component that allows a computer to connect to a network. The NIC serves as the interface between the computer and the network cable or wireless connection, enabling data transmission and reception. NICs are either integrated into the motherboard or installed as separate expansion cards, depending on the computer's design.
+
+Media Access Control (MAC) Address
+A MAC address is a unique identifier assigned to a NIC at the point of manufacture. This 48-bit address, usually represented in hexadecimal format, consists of two parts:
+
+(a) Manufacturer Code: The first three octets (6 digits) of the MAC address represent the manufacturer's unique identifier, also known as the Organizationally Unique Identifier (OUI).
+(b) Serial Code: The last three octets (6 digits) represent the serial number assigned to the NIC by the manufacturer.   Eg: A3:28:1D:00:A1:5C
+
+The purpose of the MAC address is to ensure that each device on a network has a unique identifier, facilitating accurate data transmission and device identification.
+
+Internet Protocol (IP) Address
+(a) Purpose: An IP address is a numerical label assigned to a device in a network, enabling the identification of devices and facilitating communication between them. IP addresses can be static (permanently assigned) or dynamic (assigned temporarily by a network, usually via a Dynamic Host Configuration Protocol (DHCP) server).
+
+(b) Types: There are two types of IP addresses:
+
+(i) IPv4: IPv4 addresses are 32-bit addresses, typically written as four denary numbers separated by periods (e.g., 192.168.0.1). Due to the limited number of available IPv4 addresses, a new standard was developed to accommodate the growing number of internet-connected devices.
+
+(ii) IPv6: IPv6 addresses are 128-bit addresses, written as eight groups of four hexadecimal digits separated by colons (e.g., 2001:0db8:85a3:0000:0000:8a2e:0370:7334). IPv6 offers a vastly larger address space than IPv4, ensuring sufficient unique addresses for the expanding global network.
+
+Routers
+A router is a networking device that serves multiple roles:
+
+(a) Data Routing: Routers are responsible for sending data packets to their specific destinations within a network. They achieve this by examining the destination IP address of each packet and determining the best route for it, either within the local network or to another network via the internet.
+
+(b) IP Address Assignment: Routers can assign IP addresses to devices within a local network, usually through DHCP. This enables devices to join the network and communicate with other devices.
+
+(c) Connecting Local Network to the Internet: Routers act as a gateway between the local network and the internet, enabling devices on the local network to access online resources and services.
+
+Conclusion
+
+Understanding essential network hardware components, such as NICs, MAC addresses, IP addresses, and routers, is crucial for students learning about computer networks. These components form the foundation of modern networking, enabling devices to connect, communicate, and share resources in an efficient and organized manner.

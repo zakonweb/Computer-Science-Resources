@@ -1,0 +1,11 @@
+Universal Serial Bus (USB) Interface
+The USB interface is a widely used standard for connecting devices and transmitting data. It has several benefits and drawbacks, including:
+
+i. Benefits:
+- Easy to use: USB connections are plug-and-play, making them user-friendly.
+- Versatile: USB supports a wide range of devices, including storage devices, printers, and cameras.
+- Fast data transfer: USB 3.x provides high-speed data transmission rates.
+
+Drawbacks:
+- Limited cable length: USB cables have a maximum length, which can limit their usage in some scenarios.
+- Power limitations: USB can only supply a limited amount of power to connected devices, which might not be sufficient for some high-power devices.
