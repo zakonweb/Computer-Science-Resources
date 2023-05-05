@@ -148,6 +148,7 @@ Scenario-based questions:
 
 3. A scientist is considering using an automated system to accelerate their research. What advantages and disadvantages might they encounter in implementing this system?
 
+----------------------------------------------------
 Answer key:
 I. Sensors, Microprocessors, and Actuators in Automated Systems
 Open-ended questions:

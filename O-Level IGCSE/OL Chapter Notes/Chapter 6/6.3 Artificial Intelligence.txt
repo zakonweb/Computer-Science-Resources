@@ -1,6 +1,7 @@
 6.3 Artificial Intelligence
 
-1. Understanding Artificial Intelligence (AI) Artificial intelligence (AI) is a subfield of computer science focused on creating systems and machines that can perform tasks typically requiring human intelligence. This includes problem-solving, learning, understanding natural language, recognizing patterns, and making decisions. AI systems use algorithms, models, and data to simulate the intelligent behaviors observed in humans.
+1. Understanding Artificial Intelligence (AI):
+Artificial intelligence (AI) is a subfield of computer science focused on creating systems and machines that can perform tasks typically requiring human intelligence. This includes problem-solving, learning, understanding natural language, recognizing patterns, and making decisions. AI systems use algorithms, models, and data to simulate the intelligent behaviors observed in humans.
 
 2. Main Characteristics of AI The main characteristics of AI include:
 • Collection of data: AI systems collect and process large amounts of data, which is then used to make decisions or predictions.
@@ -9,7 +10,8 @@
 • Learning and adaptation: AI systems can improve their performance over time by learning from experience, adjusting their algorithms, and adapting to new situations.
 
 3. Basic Operation and Components of AI Systems
-A. Expert Systems Expert systems are AI programs designed to simulate the decision-making capabilities of a human expert in a specific domain. They consist of the following components:
+A. Expert Systems:
+Expert systems are AI programs designed to simulate the decision-making capabilities of a human expert in a specific domain. They consist of the following components:
 • Knowledge Base: A database containing facts, information, and expertise in a specific domain.
 • Rule Base: A collection of rules that define how the system should process and interpret the information in the knowledge base.
 • Inference Engine: The component that applies the rules to the knowledge base to draw conclusions and make decisions.
@@ -20,6 +22,7 @@ B. Machine Learning Machine learning is a subset of AI that enables programs to 
 • Algorithm: The mathematical model or technique used to process the training data and generate predictions or decisions.
 • Evaluation: The process of measuring the performance of the machine learning algorithm, typically by comparing its predictions with known outcomes.
 • Adaptation: The ability of the machine learning algorithm to adjust its parameters and improve its performance based on new data or feedback.
+
 In summary, AI is a branch of computer science that aims to create systems that can perform tasks requiring human intelligence. It is characterized by the collection and processing of data, the application of rules, reasoning, and the ability to learn and adapt. Expert systems and machine learning are two key approaches to simulating intelligent behavior in AI systems.
 ----------------------------------------------------------------
 
