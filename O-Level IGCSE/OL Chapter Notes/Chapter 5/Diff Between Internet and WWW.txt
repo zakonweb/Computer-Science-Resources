@@ -1,6 +1,0 @@
-*difference between the internet and the world wide web*
-The Internet is a global network of interconnected computer networks. It consists of hardware infrastructure, such as servers, routers, and cables, that allow computers to communicate with each other across the world. The Internet enables many types of communication and information exchange, including email, messaging, online gaming, video conferencing, and more.
-
-The World Wide Web, on the other hand, is a system of interlinked hypertext documents (web pages) accessed via the Internet. The web consists of web pages, websites, and web applications, which are accessed using a web browser. It is a platform for sharing information, communicating, and conducting transactions, and has revolutionized the way we access and interact with information.
-
-In summary, the Internet is the physical infrastructure that allows computers to communicate with each other, while the World Wide Web is an application that runs on top of the Internet and provides a way for people to access and share information through web pages and websites.

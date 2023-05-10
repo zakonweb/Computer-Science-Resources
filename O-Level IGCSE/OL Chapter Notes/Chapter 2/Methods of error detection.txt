@@ -1,8 +1,0 @@
-Methods of Error Detection in Data Transmission
-
-Introduction
-
-Errors can occur during data transmission due to interference, leading to data loss, data gain, or data change. It is crucial to detect and correct these errors to ensure accurate and reliable communication. This lecture will cover the need for error detection, various error detection methods, the use of check digits, and the role of automatic repeat query (ARQ) in ensuring error-free data reception.
-
-The Need for Error Detection
-Data transmission errors can occur due to various factors, such as noise, signal attenuation, or crosstalk. Detecting and correcting these errors is essential to maintain the integrity and reliability of the data being transmitted. Error detection methods help identify and rectify these issues, ensuring that the transmitted data is accurate and complete.
