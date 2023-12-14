@@ -1,0 +1,41 @@
+Database:
+
+1. **Define a single-table database from given data storage requirements**: A single-table database is a database that consists of just one table to store data. It's simpler than a multi-table relational database, but it's also less flexible and can lead to data redundancy. Here are the components:
+
+   - **Fields**: These are the different categories of data that are stored in the table. For example, in a table storing information about books, you might have fields like "Title", "Author", "Publication Date", etc.
+   
+   - **Records**: These are individual entries in the table. Each record consists of a set of values for the fields. In the books example, each book would be a record.
+   
+   - **Validation**: This is a set of rules that ensure the data entered into the table is correct and useful. For example, you might have a rule that the "Publication Date" field must be a valid date.
+
+2. **Suggest suitable basic data types**: Here are some common data types and their uses:
+
+   - **Text/alphanumeric**: This is used for fields that contain letters, numbers, and other characters.
+   
+   - **Character**: This is used for fields that contain single characters.
+   
+   - **Boolean**: This is used for fields that can have only two values, usually true or false.
+   
+   - **Integer**: This is used for fields that contain whole numbers.
+   
+   - **Real**: This is used for fields that contain decimal numbers.
+   
+   - **Date/time**: This is used for fields that contain dates or times.
+
+3. **Understand the purpose of a primary key and identify a suitable primary key for a given database table**: A primary key is a field that uniquely identifies each record in the table. It must contain a unique value for each record, and it cannot contain null values. For example, in a table of students, the student ID might be a good primary key, as it's unique to each student.
+
+4. **Read, understand and complete structured query language (SQL) scripts to query data stored in a single database table**: SQL is a language used to interact with databases. Here are some basic commands:
+
+   - **SELECT**: This is used to specify the fields that you want to retrieve.
+   
+   - **FROM**: This is used to specify the table from which to retrieve the data.
+   
+   - **WHERE**: This is used to filter the records that are retrieved based on some condition.
+   
+   - **ORDER BY**: This is used to sort the retrieved records based on one or more fields.
+   
+   - **SUM**: This is used to calculate the total sum of a numeric column.
+   
+   - **COUNT**: This is used to calculate the number of rows that match a specified criterion.
+   
+   Identifying the output of an SQL query involves understanding what the query is asking for and knowing the structure and content of the database table. For example, the query `SELECT Author FROM Books WHERE Title = 'Moby Dick';` would return the author of the book titled 'Moby Dick'.
