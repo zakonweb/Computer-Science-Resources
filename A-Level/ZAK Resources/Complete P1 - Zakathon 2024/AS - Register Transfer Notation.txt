@@ -1,0 +1,11 @@
+The Fetch-Execute (F-E) cycle, also known as the instruction cycle, is the process by which a computer retrieves a program instruction from its memory, decodes it, and then executes it. This cycle is repeated continuously by the CPU from when the computer is turned on until it is turned off. Here's a breakdown of the stages in Register transfer notations form:
+
+   FETCH:
+   1. MAR ← [PC]			[] The content of
+   2. PC ← [PC] + 1
+   3. MDR ← [[MAR]]
+   4. CIR ← [MDR]
+   DECODE & EXECUTE:
+   5. [CIR]
+
+These stages represent a continuous loop that processes instructions during the operation of a computer. Each stage utilizes specific components of the CPU and system architecture to complete its tasks, ensuring efficient computation and program execution.

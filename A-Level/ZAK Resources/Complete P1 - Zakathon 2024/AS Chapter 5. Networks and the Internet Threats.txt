@@ -1,0 +1,30 @@
+Networks and the Internet exponentially increase the accessibility and utility of computer systems but also significantly broaden the potential threats to computer and data security. Here's an overview of the major threats posed by these technologies:
+
+1. Malware:
+   - Viruses: These are malicious programs that attach themselves to clean files and spread throughout a computer system, corrupting files and disabling computers. Viruses often spread through email attachments, downloads, or through network connections.
+   - Spyware: This type of malware covertly collects information from an individual or organization without their knowledge. It can capture everything from keystrokes to screen content and also monitor online activity.
+
+2. Hackers:
+   - Hackers are individuals who exploit vulnerabilities in computer systems and networks, often to steal, alter, or destroy information. They can be motivated by a variety of reasons, including financial gain, protest, or espionage. Hackers can use a range of techniques, such as exploiting software vulnerabilities, cracking passwords, or employing social engineering tactics.
+
+3. Phishing:
+   - Phishing attacks involve sending fraudulent communications that appear to come from a reputable source, typically via email. The aim is to steal sensitive data like credit card numbers and login information or to install malware on the victim’s machine. Phishing emails often lure users into entering personal information at a fake website whose look and feel are almost identical to the legitimate one.
+
+4. Pharming:
+   - Pharming redirects users from legitimate websites to malicious ones by exploiting vulnerabilities in the DNS (Domain Name System) or by infecting a computer with malware that alters local DNS settings. The user unknowingly enters sensitive information on these malicious sites, thinking they are legitimate.
+
+Additional Threats Include:
+
+5. Ransomware:
+   - This type of malware locks or encrypts a victim’s data, then demands payment in exchange for the decryption key. Ransomware can spread through phishing emails, malicious advertisements on websites, and exploiting vulnerabilities in software.
+
+6. Denial of Service (DoS) and Distributed Denial of Service (DDoS) Attacks:
+   - These attacks aim to make a machine or network resource unavailable to its intended users by overwhelming it with a flood of internet traffic. DDoS attacks are launched from multiple compromised devices, often distributed globally in what is referred to as a botnet.
+
+7. Man-in-the-Middle (MitM) Attacks:
+   - In these attacks, the attacker secretly intercepts and possibly alters the communication between two parties who believe they are directly communicating with each other. This can occur on unsecured Wi-Fi networks, through malware, or via other methods.
+
+8. Zero-day Exploits:
+   - These occur when attackers exploit a previously unknown vulnerability in software or hardware before the developers have released a fix or even know about the vulnerability.
+
+The interconnected nature of networks and the Internet means that these threats can spread rapidly and have widespread impacts. To combat these risks, it's essential to implement comprehensive security measures, including using strong, regularly updated antivirus software, employing firewalls, educating users about the risks and signs of phishing, and keeping all systems and software up to date with the latest security patches. Additionally, organizations should adopt a layered security approach that includes both technological defenses and organizational policies to minimize risks and mitigate potential damage.

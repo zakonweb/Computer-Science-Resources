@@ -1,0 +1,5 @@
+Security: Refers to protecting data from unauthorized access and breaches. This includes measures to defend against threats and vulnerabilities that could compromise data.
+
+Privacy: Involves handling and using data in ways that ensure the confidentiality of personal information. It's about respecting and protecting user choices and rights regarding their personal data.
+
+Integrity: Means maintaining the accuracy and consistency of data over its entire lifecycle. Data integrity ensures that information is reliable and is not altered inappropriately, whether by accident or maliciously.

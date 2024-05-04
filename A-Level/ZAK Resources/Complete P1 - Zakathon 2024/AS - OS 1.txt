@@ -1,0 +1,13 @@
+The OS is essential because it manages hardware resources, coordinates and executes software, and ensures system stability and security, allowing users and applications to interact with the computer efficiently.
+
+Here are the key management tasks carried out by an Operating System (OS):
+
+1. Memory Management: Allocates and manages RAM among processes, ensures efficient memory usage, and handles swapping between RAM and storage.
+
+2. File Management: Controls the reading, writing, creation, and deletion of files. Manages directories and handles access permissions and file system organization.
+
+3. Security Management: Protects system integrity and data security through user authentication, access rights enforcement, and use of security protocols.
+
+4. Hardware Management: Manages input/output operations and peripheral devices, ensuring smooth operation and interfacing of components like disks, printers, and keyboards.
+
+5. Process Management: Handles process scheduling, execution, and termination. Manages CPU time allocation among processes and ensures efficient process cooperation and competition for resources.

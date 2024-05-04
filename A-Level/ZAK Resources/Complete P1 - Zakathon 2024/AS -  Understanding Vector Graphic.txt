@@ -1,0 +1,32 @@
+Understanding Vector Graphic Encoding
+
+Vector graphics represent images using geometric descriptions which can scale to any size without losing clarity. This format is fundamentally different from bitmap images, which are made up of pixels. Here’s how vector graphics are encoded:
+
+Drawing Object
+A vector graphic is made up of several drawing objects. Each object represents a part of the image and can be a line, a curve, a polygon, or a composite of these elements. These objects are defined by mathematical equations rather than pixel grids.
+
+Property
+Each drawing object in a vector graphic has properties that define its appearance. Properties can include:
+- Coordinates: Define the position of the object within the image.
+- Colors: Specify the colors of the object.
+- Strokes: Outline properties such as width and style.
+- Fills: Define what the interior of an object looks like.
+- Effects: Such as shadows, gradients, or transparency.
+
+Drawing List
+A drawing list is the collection of all the drawing objects that make up a vector graphic. This list is ordered; objects later in the list can overlap and cover parts of objects earlier in the list. The drawing list allows vector graphic software to reconstruct the image, object by object, based on their properties and relationships.
+
+Justifying the Use of Bitmap Images or Vector Graphics
+
+The choice between using a bitmap image or a vector graphic depends on the specific needs of the project:
+
+Use Bitmap Images for:
+- Photographs and Complex Images: Bitmaps are ideal for detailed images with complex color gradients and subtle variations, such as photographs. This is because they can easily represent subtle variations in light and color with high fidelity.
+- Small File Sizes at Small Resolutions: When an image doesn’t need to be scaled, a bitmap might use less disk space especially if the image is small and detailed.
+
+Use Vector Graphics for:
+- Logos and Illustrations: Vectors are perfect for images that need to scale without losing quality. Logos, icons, and illustrations benefit from vectors because they can be resized for different uses (like billboards or business cards) without any pixelation.
+- Applications Requiring Frequent Resizing: Any graphic that needs to be displayed at multiple sizes or resolutions is typically better as a vector, as it maintains crispness and clarity at any size.
+- Print Media: Vector graphics are preferable in print media because they ensure that the graphics will appear sharp and clear, regardless of the size at which they are printed.
+
+By choosing the appropriate type for a given task, you ensure the best quality and efficiency for your project. Vectors and bitmaps each have their strengths, and understanding these helps in making informed decisions for graphic design and media production.

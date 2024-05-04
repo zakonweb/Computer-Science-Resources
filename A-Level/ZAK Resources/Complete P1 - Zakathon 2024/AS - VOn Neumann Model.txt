@@ -1,0 +1,11 @@
+The Von Neumann model outlines a computer system architecture with four key components: 
+
+the Central Processing Unit (CPU) for processing data, 
+
+a single shared memory unit for storing both data and instructions, 
+
+input devices for data entry, and 
+
+output devices for displaying results. 
+
+This model also introduces the stored program concept, where program instructions are stored in memory alongside data, allowing the CPU to fetch and execute instructions sequentially.

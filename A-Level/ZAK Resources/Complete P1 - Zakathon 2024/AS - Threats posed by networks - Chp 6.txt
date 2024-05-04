@@ -1,0 +1,13 @@
+Understanding the threats posed by networks and the internet involves recognizing the various forms of cyber threats that can exploit vulnerabilities in networked environments:
+
+1. Malware:
+   - Virus: A type of malicious software that, when executed, replicates by modifying other computer programs and inserting its own code. Viruses can damage systems, corrupt data, and spread across networks.
+   - Spyware: This malware secretly gathers information about a person or organization without their knowledge. It can monitor user activity, collect keystrokes, and access confidential information.
+
+2. Hackers: Individuals or groups who use their technical knowledge to break into computer systems, often bypassing security measures to gain unauthorized access to data, deploy malware, or cause other malicious damage.
+
+3. Phishing: A deceptive technique where attackers masquerade as trustworthy entities in communications (e.g., emails, text messages) to lure individuals into providing sensitive data such as passwords, credit card numbers, and personal information. Phishing attacks can lead to financial loss and identity theft.
+
+4. Pharming: A more sophisticated form of phishing that redirects users from legitimate websites to fraudulent ones. This is often achieved by exploiting vulnerabilities in DNS (Domain Name System) servers to redirect users without their knowledge, aiming to steal personal information or credentials.
+
+These threats exploit the connectivity provided by networks and the internet to attack multiple victims quickly and efficiently. Awareness and preventive measures like using updated security software, training on security awareness, and adhering to best practices in digital communication are essential in mitigating these risks.

@@ -1,0 +1,13 @@
+Utility software provided with an operating system serves to enhance the functionality and efficiency of a computer system by performing specific maintenance and management tasks:
+
+1. Disk Formatter: Prepares storage devices for use by setting up a file system, enabling the OS to store and retrieve data on disks.
+
+2. Virus Checker: Protects the system against malware by scanning files and processes, detecting threats, and performing necessary clean-up actions.
+
+3. Defragmentation Software: Reorganizes data on the disk to ensure that file segments are contiguous, improving read/write efficiency and speeding up the system.
+
+4. Disk Contents Analysis/Disk Repair Software: Analyzes and monitors disk usage, identifies problems, and fixes issues such as bad sectors or file system errors to maintain disk health and data integrity.
+
+5. File Compression: Reduces the size of files, saving storage space and enabling faster data transmission.
+
+6. Back-up Software: Creates copies of data to prevent data loss in case of system failure, data corruption, or accidental deletion, ensuring data availability and continuity.

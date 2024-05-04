@@ -1,0 +1,16 @@
+The performance of a computer system is influenced by several hardware factors, each contributing in unique ways to how efficiently the system processes tasks. Here’s a breakdown of key factors:
+
+1. Processor Type and Number of Cores:
+   - Processor Type: Refers to the architecture and capabilities of the CPU, which can affect how efficiently it executes instructions and handles data. Different processors support different instruction sets and technologies.
+   - Number of Cores: More cores allow a computer to perform multiple tasks simultaneously (parallel processing), enhancing performance especially for multi-threaded applications.
+
+2. Bus Width:
+   - The bus width refers to the number of bits that can be transferred simultaneously between components. A wider bus width enables more data to be transferred at once, reducing the number of cycles needed for data transfers and potentially increasing system performance.
+
+3. Clock Speed:
+   - Measured in gigahertz (GHz), clock speed determines how many instructions a processor can execute per second. Higher clock speeds mean the processor can perform more operations per second, though this also depends on the efficiency of the architecture.
+
+4. Cache Memory:
+   - Cache is a small, fast type of volatile memory that provides high-speed data storage and access to the processor. It stores copies of the data from frequently used main memory locations. Higher levels of cache (L1, L2, L3) with more memory generally provide better performance by reducing the time needed to access data from main memory.
+
+Each of these factors contributes to reducing processing time and increasing the throughput of a computer system. For example, a processor with a high clock speed and multiple cores, equipped with a large cache and supported by a wide bus, will typically perform better than one with lower specifications in these areas.
