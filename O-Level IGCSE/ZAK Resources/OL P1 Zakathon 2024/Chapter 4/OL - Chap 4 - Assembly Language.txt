@@ -1,0 +1,12 @@
+Assembly language is a type of low-level programming language designed to communicate directly with a computer's hardware. It uses mnemonics, which are symbolic representations of machine code instructions, making it slightly more readable than raw binary code. For example, instead of using binary codes for operations, assembly language uses abbreviations like MOV for move, ADD for add, and SUB for subtract.
+
+An assembler is a software tool that translates assembly language code into machine code, the lowest level of code that is directly executed by a computer's CPU. Each mnemonic in assembly language corresponds to an operation in machine code, and the assembler performs the task of converting these mnemonics into the binary instructions that the computer hardware can process.
+
+Key Points:
+
+- Mnemonics: These are abbreviations or symbolic names used to represent machine instructions, which help programmers remember the functions more easily than binary codes.
+- Assembler: This is the program that converts the assembly language code into machine code. It processes the mnemonics, data, and other elements in the assembly code to produce a binary output that the machine can execute.
+- Direct Hardware Manipulation: Assembly language allows programmers to manipulate specific hardware components directly, which can be crucial for system-level programming.
+- Efficiency and Control: Assembly language provides greater control over system resources, potentially leading to more efficient execution, though this comes at the cost of increased complexity in coding and debugging. 
+
+Assembly language serves as an essential bridge between high-level languages and pure machine code, giving programmers detailed control over a computer's operations while providing a more understandable coding environment than raw binary code.

@@ -1,0 +1,57 @@
+COMPRESSION:
+At binary level the size of the file is reduced. This is done to transfer more data in less time and to store more data in less space. 
+
+Sender compresses the file and transmit to the receiver. Receiver decompresses the file and bring it back to its normal form to be used conviniently.
+
+Files in compressed format cannot be used until they are uncompressed.
+
+There are two types of compression: Lossy and Lossless
+
+Lossy compressions:
+All those elements in nature which as humans we cannot make sense of or we can't feel, hear, or see are removed from the data and upon uncompression we lose them permanently, is called LOSSY compression.
+
+Elements which are got rid of are,
+sounds below 2k and above 20k, or 
+we cannot see colors above 1 million, so all colors above one million are removed.
+
+Few lossy compressions have become standards and are known to all operating systems. For example JPEG/JPG, MP3, GIF etc. Cell phones for example take a picture and converts it to JPG right away before we could see and share it with any other cell phone in the world, who in turn will know the format as well.
+
+MP3 LOSSY COMPRESSION:
+It is sound compression and it uses following methods to get rid of the data:
+
+1. Perceptual Music Shaping:
+All low music notes played beside high notes; as low notes will not be noticed
+All frequencies humans cannot make sense of.
+
+2. Reducing bit/sample rate.
+
+MP3 compression reduces file size 10 times or 90%
+ 
+LOSSLESS COMPRESSION:
+It reduces the file size but when the file is required back, actual file is created again to be reused. Mainly, text and numbers are compressed with lossless compression methods. But other file formats like sound, image and videos can also be losslessly compressed.
+Generally lossless compression's compression ratio is less than the lossy compression ratios.
+
+Algorithms like Run Length Encoding (RLE) and Huffman Encoding are used for lossless encoding.
+
+Run Length Encoding (RLE):
+RLE is a form of lossless compression that takes redundant strings or runs of data and stores them as one unit. For example, you have a picture of red and white stripes, and there are 12 white pixels and 12 red pixels. Normally, the data for it would be written as WWWWWWWWWWWWRRRRRRRRRRRR, with W representing White pixel and R representing Red pixel. RLE would put the data as 12W and 12R.Much smaller than actual data. 
+
+----------
+|        |	WWWWWWWW	9W 6B 2W 1B 7W 5B 3W 1B 7W 1B 7W 1B 7W 1B 7W 1B 14W
+| ###### |      WBBBBBBW	=32B
+| #      |      WBWWWWWW
+| #####  |      WBBBBBWW      
+| #      |	WBWWWWWW
+| #      |	WBWWWWWW
+| #      |	WBWWWWWW
+| #      |	WBWWWWWW
+|        |	WBWWWWWW
+----------	WWWWWWWW
+		=80B
+
+STRING: SHE SELLS SEA SHELLS AT SEA SHORE
+RLE:    1E 23 4 1E3 AT 4 1ORE
+SH=1
+SE=2 
+LLS=3
+SEA=4

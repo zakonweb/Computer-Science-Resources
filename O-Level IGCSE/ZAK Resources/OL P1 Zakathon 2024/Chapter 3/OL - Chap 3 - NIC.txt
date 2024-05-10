@@ -1,0 +1,1 @@
+A Network Interface Card (NIC) is essential for a computer to connect and access a network. It serves as an interface between the computer and the network, allowing data to be transmitted and received over the network. NICs can be integrated into the motherboard or installed as an add-on card. They manage the electrical and data transformations needed for network communications.

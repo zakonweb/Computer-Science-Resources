@@ -1,0 +1,12 @@
+1. (a) Understanding Packet Transmission: Data transmission over networks involves breaking down data into smaller units called packets. This segmentation facilitates more efficient and manageable data handling and error control during transit. Each packet can travel via the most optimal path to its destination, potentially taking different routes in a process known as packet switching.
+
+(b) Structure of a Packet: A packet typically consists of three main components:
+
+   - Packet Header: This part of the packet contains essential control information which is used for successful delivery. Key elements include:
+     - Destination Address: The address of the receiver of the packet.
+     - Packet Number: This helps in reassembling the packets in the correct sequence at the destination.
+     - Originator’s Address: The address of the sender of the packet.
+
+   - Payload: This is the actual data that the packet is transporting. It's the main content extracted from the original message.
+
+   - Trailer: Often referred to as the footer, it contains additional data required for error detection and correction in the transmitted packet.

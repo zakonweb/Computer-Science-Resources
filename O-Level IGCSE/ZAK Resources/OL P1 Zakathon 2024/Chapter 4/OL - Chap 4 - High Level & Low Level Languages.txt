@@ -1,0 +1,27 @@
+High-Level Language
+
+Definition: High-level languages are programming languages that are more abstract from the details of the computer's hardware, resembling human languages or mathematical notation. These languages provide a higher level of abstraction which helps in simplifying the complex details of hardware interactions.
+
+Advantages:
+- Ease of Reading and Writing: High-level languages are generally easier to read and write because they use natural language elements or familiar mathematical notation.
+- Ease of Debugging: Bugs in high-level languages are often easier to track down and fix because the code is more understandable and includes comprehensive debugging tools.
+- Machine Independence: High-level code can usually be run on different types of computer systems without modification due to its abstract nature.
+
+Disadvantages:
+- Less Control Over Hardware: High-level languages provide less control over system hardware as they are designed to abstract away from hardware specifics.
+- Performance Overhead: They can be less efficient in terms of execution time and memory usage because of the additional layers of abstraction and interpretation.
+
+Low-Level Language
+
+Definition: Low-level languages are closer to the hardware and are less abstracted from the machine’s instructions. They include assembly languages and machine code, providing more direct control over the hardware.
+
+Advantages:
+- Direct Manipulation of Hardware: Low-level languages allow for detailed and precise control over the hardware, which can be crucial for system programming and performance-critical applications.
+- Performance: Code written in low-level languages can be more efficient in terms of execution speed and memory usage.
+
+Disadvantages:
+- Difficulty in Reading and Writing: These languages are harder to read and write as they require a thorough understanding of the computer’s architecture and hardware.
+- Ease of Debugging: Debugging low-level code can be more challenging because the code is less intuitive and more tied to the intricacies of the hardware.
+- Machine Dependence: Code written in low-level languages is often specific to a particular type of computer or processor architecture, making it less portable.
+
+In summary, high-level languages are user-friendly and versatile for general programming, while low-level languages are best suited for performance-critical and hardware-specific programming tasks.

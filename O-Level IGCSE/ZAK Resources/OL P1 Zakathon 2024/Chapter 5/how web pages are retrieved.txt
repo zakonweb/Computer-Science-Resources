@@ -1,0 +1,16 @@
+When a user enters a URL into a web browser, several steps are involved in locating, retrieving, and displaying the web page on the device. Here's a simplified step-by-step process:
+
+1. The web browser first checks its cache to see if it already has a copy of the web page. If it does, it displays the cached copy, which is faster than retrieving the page again from the internet.
+
+2. If the web page is not in the cache, the web browser sends a request to the Domain Name System (DNS) server to translate the domain name in the URL into an IP address.
+
+3. The DNS server then searches for the IP address associated with the domain name in its database and returns the IP address to the web browser.
+
+4. The web browser then sends a request to the web server specified by the IP address to retrieve the web page.
+
+5. The web server receives the request and sends the web page back to the web browser as a series of HTML, CSS, and JavaScript files.
+
+6. The web browser interprets the HTML files and renders the web page on the device screen, displaying images, videos, and other multimedia content according to the web page's layout.
+
+In summary, when a user enters a URL into a web browser, the browser uses DNS to translate the domain name in the URL into an IP address, sends a request to the web server specified by the IP address, and retrieves the web page as a series of HTML, CSS, and JavaScript files, which are then rendered by the browser to display the web page on the device screen.
+
