@@ -1,0 +1,54 @@
+TEXT Filing in Pseudocode:
+
+OPENing of file:
+OPENFILE <file identifier> FOR <file mode>
+
+<file mode> File Modes:
+READ: To read from the file.
+WRITE: To write to the file. 
+       Creates a new file, or 
+       overwrites an existing file.
+APPEND: To add data to the end of the file, 
+        if file doesn't exist then Creates a new file 
+
+Eg: OPENFILE "abc.txt" FOR READ
+FN ← "xyz.txt"
+OPENFILE FN FOR READ
+---------------------------------------------
+
+Reading from a File
+READFILE <file identifier>, <variable>
+
+abcde
+f
+g
+h
+i
+
+READFILE "alpha.txt", newLine
+---------------------------
+End of File (EOF)
+EOF(<file identifier>) RETURNS BOOLEAN
+
+IF EOF("alpha.txt") THEN
+IF EOF("alpha.txt") = TRUE THEN
+
+WHILE EOF("alpha.txt") = FALSE
+WHILE NOT EOF("alpha.txt")
+-----------------------------
+
+Writing to a File
+WRITEFILE <file identifier>, <data>
+
+WRITEFILE "alpha.txt", myLine
+WRITEFILE "alpha.txt", "My name is khan..."
+---------------------------------
+
+Closing a File
+CLOSEFILE <file identifier>
+
+
+
+
+
+
