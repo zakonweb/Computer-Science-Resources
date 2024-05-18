@@ -1,0 +1,54 @@
+DECLARE DayNames : ARRAY[1:7] OF STRING
+
+DayNames[1] ← "Monday"
+DayNames[2] ← "Tuesday"
+DayNames[3] ← "Wednesday"
+DayNames[4] ← "Thursday"
+DayNames[5] ← "Friday"
+DayNames[6] ← "Saturday"
+DayNames[7] ← "Sunday"
+
+// Initialize week variables
+MaxWeek ← -1000
+MinWeek ← 1000
+SumTemp ← 0
+
+// Process each day of the week
+FOR Day ← 1 TO 7
+    // Initialize day variables
+    MaxDay ← -1000
+    MinDay ← 1000
+    SumDayTemp ← 0
+    
+    // Process each hour of the day
+    FOR Hour ← 1 TO 24
+        IF Temperatures[Hour, Day] > MaxDay THEN
+            MaxDay ← Temperatures[Hour, Day]
+        ENDIF
+        IF Temperatures[Hour, Day] < MinDay THEN
+            MinDay ← Temperatures[Hour, Day]
+        ENDIF
+        SumDayTemp ← SumDayTemp + Temperatures[Hour, Day]
+    NEXT Hour
+    
+    // Calculate average temperature for the day
+    AvDay ← SumDayTemp / 24
+
+    // Output day results
+    OUTPUT DayNames[Day], " - Max: ", ROUND(MaxDay, 2), " Min: ", ROUND(MinDay, 2), " Avg: ", ROUND(AvDay, 2)
+    
+    // Update week variables
+    IF MaxDay > MaxWeek THEN
+        MaxWeek ← MaxDay
+    ENDIF
+    IF MinDay < MinWeek THEN
+        MinWeek ← MinDay
+    ENDIF
+    SumTemp ← SumTemp + SumDayTemp
+NEXT Day
+
+// Calculate average temperature for the week
+AvWeek ← SumTemp / (7 * 24)
+
+// Output week results
+OUTPUT "Weekly - Max: ", ROUND(MaxWeek, 2), " Min: ", ROUND(MinWeek, 2), " Avg: ", ROUND(AvWeek, 2)

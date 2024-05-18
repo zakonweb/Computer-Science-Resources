@@ -1,0 +1,74 @@
+// Assume necessary arrays and variables have already been declared
+// WoodType[] and Price[] are initialized
+WoodType[1] ← "Laminate"
+WoodType[2] ← "Pine"
+WoodType[3] ← "Oak"
+
+Price[1] ← 29.99
+Price[2] ← 39.99
+Price[3] ← 54.99
+
+// Counter Variable Initialisation
+Count ← 1
+
+// Function to get valid room measurement
+FUNCTION GetValidMeasurement(prompt : STRING) RETURNS REAL
+    DECLARE measurement : REAL	// Local Variable
+    REPEAT
+        OUTPUT prompt
+        INPUT measurement
+        IF measurement < 1.5 OR measurement > 10.0 THEN	//Rangle Check
+            OUTPUT "Error: Measurement must be between 1.5 and 10.0 metres. Please re-enter."
+        ENDIF
+    UNTIL measurement >= 1.5 AND measurement <= 10.0
+    RETURN measurement
+ENDFUNCTION
+
+// Main program loop
+WHILE Count <= 100   //There are 100 customers
+    // Input new customer's name
+    OUTPUT "Enter customer name (or type 'exit' to finish): "
+    INPUT CustomerName
+    IF CustomerName = "exit" THEN
+        EXIT LOOP
+    ENDIF
+    Customers[Count] ← CustomerName
+
+    // Input and validate room length
+    Length ← GetValidMeasurement("Enter room length (in metres, between 1.5 and 10.0): ")
+
+    // Input and validate room width
+    Width ← GetValidMeasurement("Enter room width (in metres, between 1.5 and 10.0): ")
+
+    // Calculate the area of the room and round up to the next whole number
+    Area ← Length * Width
+    Quotations[Count, 3] ← ROUND(Area + 0.5, 0)
+
+    // Input choice of wood and find its price
+    REPEAT
+        OUTPUT "Choose wood type (1: Laminate, 2: Pine, 3: Oak): "
+        INPUT Choice
+        IF Choice < 1 OR Choice > 3 THEN
+            OUTPUT "Error: Invalid choice. Please select 1, 2, or 3."
+        ENDIF
+    UNTIL Choice >= 1 AND Choice <= 3
+
+    Quotations[Count, 4] ← Choice
+    PricePerSquareMetre ← Price[Choice]
+
+    // Calculate the total price of the wood required
+    TotalPrice ← Area * PricePerSquareMetre
+    Quotations[Count, 5] ← ROUND(TotalPrice, 2)
+
+    // Store data in arrays
+    Quotations[Count, 1] ← ROUND(Length, 1)
+    Quotations[Count, 2] ← ROUND(Width, 1)
+
+    // Output the customer's quotation
+    OUTPUT "Customer: ", Customers[Count]
+    OUTPUT "Wood type: ", WoodType[Choice]
+    OUTPUT "Total price: $", ROUND(TotalPrice, 2)
+
+    // Increment counter
+    Count ← Count + 1
+ENDWHILE

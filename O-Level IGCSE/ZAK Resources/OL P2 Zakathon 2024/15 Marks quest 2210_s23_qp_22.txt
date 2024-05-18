@@ -1,0 +1,88 @@
+// Assume necessary global arrays and variable Size have already been declared and initialized
+// Account[] array stores account holder names and passwords
+// AccDetails[] array stores account balances, overdraft limits, and withdrawal limits
+
+// Function to check account ID, name, and password
+FUNCTION VerifyAccount(AccountID : INTEGER, Name : STRING, Password : STRING) RETURNS BOOLEAN
+    IF AccountID >= 1 AND AccountID <= Size THEN
+        IF Account[AccountID, 1] = Name AND Account[AccountID, 2] = Password THEN
+            RETURN TRUE
+        ELSE
+            OUTPUT "Error: Name or password is incorrect."
+            RETURN FALSE
+        ENDIF
+    ELSE
+        OUTPUT "Error: Account ID does not exist."
+        RETURN FALSE
+    ENDIF
+ENDFUNCTION
+
+// Procedure to display balance
+PROCEDURE DisplayBalance(AccountID : INTEGER)
+    OUTPUT "Your current balance is: $", ROUND(AccDetails[AccountID, 1], 2)
+ENDPROCEDURE
+
+// Procedure to withdraw money
+PROCEDURE WithdrawMoney(AccountID : INTEGER)
+    DECLARE Amount : REAL
+    OUTPUT "Enter the amount to withdraw: "
+    INPUT Amount
+    IF Amount > AccDetails[AccountID, 3] THEN
+        OUTPUT "Error: Withdrawal amount exceeds withdrawal limit of $", AccDetails[AccountID, 3]
+    ELSE
+        DECLARE NewBalance : REAL
+        NewBalance ← AccDetails[AccountID, 1] - Amount
+        IF NewBalance < -AccDetails[AccountID, 2] THEN
+            OUTPUT "Error: Overdraft limit exceeded. Maximum allowable withdrawal is $", 
+                    ROUND(AccDetails[AccountID, 1] + AccDetails[AccountID, 2], 2)
+        ELSE
+            AccDetails[AccountID, 1] ← NewBalance
+            OUTPUT "Withdrawal successful. New balance is: $", ROUND(NewBalance, 2)
+        ENDIF
+    ENDIF
+ENDPROCEDURE
+
+// Procedure to deposit money
+PROCEDURE DepositMoney(AccountID : INTEGER)
+    DECLARE Amount : REAL
+    OUTPUT "Enter the amount to deposit: "
+    INPUT Amount
+    AccDetails[AccountID, 1] ← AccDetails[AccountID, 1] + Amount
+    OUTPUT "Deposit successful. New balance is: $", ROUND(AccDetails[AccountID, 1], 2)
+ENDPROCEDURE
+
+// Main program
+DECLARE AccountID : INTEGER
+DECLARE Name, Password : STRING
+DECLARE Choice : INTEGER
+
+// Input account details for verification
+OUTPUT "Enter your account ID: "
+INPUT AccountID
+OUTPUT "Enter your name: "
+INPUT Name
+OUTPUT "Enter your password: "
+INPUT Password
+
+// Verify account details
+IF VerifyAccount(AccountID, Name, Password) = TRUE THEN
+    REPEAT
+        // Display menu
+        OUTPUT "Choose an action:"
+        OUTPUT "1. Display balance"
+        OUTPUT "2. Withdraw money"
+        OUTPUT "3. Deposit money"
+        OUTPUT "4. Exit"
+        INPUT Choice
+        
+        // Execute chosen action
+        CASE OF Choice
+            1: CALL DisplayBalance(AccountID)
+            2: CALL WithdrawMoney(AccountID)
+            3: CALL DepositMoney(AccountID)
+            4: OUTPUT "Exiting the program."
+        OTHERWISE
+            OUTPUT "Error: Invalid choice. Please select 1, 2, 3, or 4."
+        ENDCASE
+    UNTIL Choice = 4
+ENDIF
