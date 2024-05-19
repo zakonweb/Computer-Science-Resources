@@ -1,0 +1,115 @@
+°F ← (°C × 9/5) + 32 
+----------------------------------
+
+FUNCTION CTOF(Celsius : INTEGER) RETURN REAL
+  DECLARE Fahrenheit : REAL	// Local Variable
+  Fahrenheit ← (Celsius * 9/5) + 32
+
+  RETURN Fahrenheit 
+END FUCTION
+
+OUTPUT "Enter temprature in Celsius: "
+INPUT C
+
+F ← CTOF(C)
+OUTPUT "Fahrenheit: ", F
+--------------------------------------
+
+// Procedure to sort an array in ascending order
+PROCEDURE SORT_ARRAY(STUDENTID : ARRAY[1:50] OF INTEGER)
+    DECLARE temp: INTEGER
+   
+    //Bubble Sort
+    FOR i ← 1 TO 49
+        FOR j ← 1 TO 50 - i
+            IF STUDENTID[j] > STUDENTID[j + 1] THEN
+                // Swap the elements
+                temp ← STUDENTID[j]
+                STUDENTID[j] ← STUDENTID[j + 1]
+                STUDENTID[j + 1] ← temp
+            ENDIF
+        NEXT j
+    NEXT i
+ENDPROCEDURE
+
+// Example usage
+DECLARE STUDENTID : ARRAY[1:50] OF INTEGER
+
+// Assume STUDENTID is initialized with some values
+CALL SORT_ARRAY(STUDENTID)
+----------------------------------
+Understanding Arrays
+
+1. One-Dimensional Arrays (1D Arrays)
+
+- Definition: A one-dimensional array is a collection of variables of the same type that are accessed with a single index.
+
+- Structure: Think of a 1D array as a list of items, where each item is stored at a specific position in the list.
+
+- Example: Let's say you have an array that stores the scores of 5 students in a test.
+  Scores ← [85, 90, 78, 92, 88]
+  
+
+- Indexing: The index of an array typically starts at 0 or 1, depending on the programming language. In the above example:
+  - Scores[0] ← 85
+  - Scores[1] ← 90
+  - Scores[2] ← 78
+  - Scores[3] ← 92
+  - Scores[4] ← 88
+
+- Usage: You can access or modify the elements using their index.
+  pseudocode
+  Scores[2] ← 80  // Change the third score to 80
+  
+
+2. Two-Dimensional Arrays (2D Arrays)
+
+- Definition: A two-dimensional array is like a table or grid with rows and columns. Each element is accessed with two indices: one for the row and one for the column.
+
+- Structure: Imagine a 2D array as a matrix or grid, where data is stored in rows and columns.
+
+- Example: Consider a 2D array that represents a 3x3 tic-tac-toe board.
+  plaintext
+  Board ← [
+    ['X', 'O', 'X'],
+    ['O', 'X', 'O'],
+    ['X', 'O', 'X']
+  ]
+  
+
+- Indexing: In a 2D array, you access elements with two indices: [row,column]. In the above example:
+  - Board[0,0] ← 'X'
+  - Board[1,1] ← 'X'
+  - Board[2,2] ← 'X'
+
+- Usage: You can access or modify elements using their row and column indices.
+  pseudocode
+  Board[1,1] ← 'O'  // Change the element in the second row, second column to 'O'
+  
+
+Visualization
+
+One-Dimensional Array (1D)
+
+Index:    0    1    2    3    4
+Scores:  85   90   78   92   88
+
+
+Two-Dimensional Array (2D)
+
+Index:    0   1   2
+        +---+---+---+
+Row 0:  | X | O | X |
+        +---+---+---+
+Row 1:  | O | X | O |
+        +---+---+---+
+Row 2:  | X | O | X |
+        +---+---+---+
+
+
+Summary
+- 1D Arrays: Lists of items accessed with a single index.
+- 2D Arrays: Tables or grids accessed with two indices (row and column).
+
+These concepts are fundamental in programming and help organize and manage data efficiently. If you have any questions or need more examples, feel free to ask!
+
