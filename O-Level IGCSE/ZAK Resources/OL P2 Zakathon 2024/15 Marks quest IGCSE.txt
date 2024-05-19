@@ -1,0 +1,47 @@
+// Initialize a counter for booked seats
+bookedSeatsCount ← 0
+
+// Count and output the number of seats already booked
+FOR row ← 1 TO 10
+    FOR seat ← 1 TO 20
+        IF Evening[row, seat] = TRUE THEN
+            bookedSeatsCount ← bookedSeatsCount + 1
+        ENDIF
+    NEXT seat
+NEXT row
+
+OUTPUT "Number of seats already booked: ", bookedSeatsCount
+
+// Allow the user to input the number of seats required
+INPUT seatsRequired
+
+// Validate the input
+IF seatsRequired < 1 OR seatsRequired > 4 THEN
+    OUTPUT "Invalid number of seats. You can book between 1 and 4 seats."
+ELSE
+    // Check if enough seats are available
+    availableSeatsCount ← 0
+    FOR row ← 1 TO 10
+        FOR seat ← 1 TO 20
+            IF Evening[row, seat] = FALSE THEN
+                availableSeatsCount ← availableSeatsCount + 1
+            ENDIF
+        NEXT seat
+    NEXT row
+
+    IF availableSeatsCount < seatsRequired THEN
+        OUTPUT "Only ", availableSeatsCount, " seats are available. House full if 0 seats available."
+    ELSE
+        // Book the seats
+        booked ← 0
+        FOR row ← 1 TO 10
+            FOR seat ← 1 TO 20
+                IF Evening[row, seat] = FALSE AND booked < seatsRequired THEN
+                    Evening[row, seat] ← TRUE
+                    booked ← booked + 1
+                    OUTPUT "Booked Row: ", row, " Seat: ", seat
+                ENDIF
+            NEXT seat
+        NEXT row
+    ENDIF
+ENDIF

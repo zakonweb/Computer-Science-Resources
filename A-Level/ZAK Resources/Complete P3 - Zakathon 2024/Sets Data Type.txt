@@ -1,0 +1,38 @@
+Defining and Using Sets in Pseudocode
+
+1. Type Definition:
+   - First, you define the type of the set and the base type of its elements. In the example you provided, the set Sletter consists of characters.
+
+   pseudocode
+   TYPE Sletter = SET OF CHAR
+   
+
+2. Variable Definition:
+   - Next, you define a variable of the type Sletter. The variable vowel is initialized with the elements 'a', 'e', 'i', 'o', and 'u'.
+
+   pseudocode
+   DEFINE vowel ('a', 'e', 'i', 'o', 'u') : Sletter
+   
+
+Set Operations
+
+To expand on how you can use sets, here are examples of set operations:
+
+- Union: Combines all elements from two sets, removing duplicates.
+  pseudocode
+  SET unionVowels = vowel UNION {'y'}
+  
+
+- Intersection: Finds common elements between two sets.
+  pseudocode
+  DEFINE set1 ('a', 'i', 'u') : Sletter
+  DEFINE set2 ('i', 'o', 'u') : Sletter
+  SET commonVowels = set1 INTERSECTION set2
+  
+
+- Difference: Returns elements present in one set but not in the other.
+  pseudocode
+  SET uniqueVowels = vowel DIFFERENCE {'a', 'e'}
+  
+
+These operations allow you to manipulate sets for various needs, such as filtering data or combining information from different sources. Sets, being inherently unordered and unique, are particularly useful in scenarios where the order of elements does not matter, and duplicates are not desired.

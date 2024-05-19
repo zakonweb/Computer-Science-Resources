@@ -1,0 +1,86 @@
+//RANDOM ACCESS FILES
+//PSEUDOCODE
+TYPE studentRec 		//UDT
+   DECLARE sID : INTEGER
+   DECLARE sName : STRING*30
+   DECLARE sClass : STRING*5
+   DECLARE sFee : REAL
+EndTYPE
+
+//ADD A SINGLE RECORD TO THE
+//RANDOM ACCESS (BINARY) FILE
+DECLARE student : studentRec
+DECLARE noOfRecs : INTEGER
+
+INPUT "Enter student ID: ", student.sID
+INPUT "Enter student Name: ", student.sName
+INPUT "Enter student Class: ", student.sClass
+INPUT "Enter student Fee: ", student.sFee
+
+OPENFILE "students.dat" FOR RANDOM
+NoOfRecs = LOF("students.dat") / LEN(student)
+SEEK "students.dat", NoOfRecs + 1
+PUTFILE "students.dat", student 
+CLOSEFILE "students.dat"
+
+//ADD MULTIPLE RECORDS TO THE
+//RANDOM ACCESS (BINARY) FILE
+DECLARE student : studentRec
+DECLARE noOfRecs : INTEGER
+
+OPENFILE "students.dat" FOR RANDOM
+NoOfRecs = LOF("students.dat") / LEN(student)
+
+INPUT "Enter student ID (Enter blank to quit.): ", student.sID
+WHILE student.sID <> 0
+   INPUT "Enter student Name: ", student.sName
+   INPUT "Enter student Class: ", student.sClass
+   INPUT "Enter student Fee: ", student.sFee
+
+   SEEK "students.dat", NoOfRecs + 1
+   PUTFILE "students.dat", student
+   NoOfRecs = NoOfRecs + 1
+   INPUT "Enter student ID (Enter blank to quit.): ", student.sID
+END WHILE
+CLOSEFILE "students.dat"
+
+//DISPLAY MULTIPLE RECORDS FROM THE
+//RANDOM ACCESS (BINARY) FILE
+DECLARE student : studentRec
+DECLARE noOfRecs, i : INTEGER
+
+OPENFILE "students.dat" FOR RANDOM
+NoOfRecs = LOF("students.dat") / LEN(student)
+
+FOR i = 1 TO NoOfRecs
+   SEEK "students.dat", i
+   GETFILE "students.dat", student
+ 
+   OUTPUT "Student ID : ", student.sID
+   OUTPUT "Student Name: ", student.sName
+   OUTPUT "Student Class: ", student.sClass
+   OUTPUT "Student Fee: ", student.sFee
+NEXT i
+CLOSEFILE "students.dat"
+
+//SEARCH A RECORD IN THE
+//RANDOM ACCESS (BINARY) FILE
+DECLARE student : studentRec
+DECLARE noOfRecs, i, searchID : INTEGER
+DECLARE isFound : BOOLEAN	//Flag
+isFound = FALSE
+
+INPUT "Enter Search ID: ", searchID
+OPENFILE "students.dat" FOR RANDOM
+NoOfRecs = LOF("students.dat") / LEN(student)
+IF searchID <= NoOfRecs THEN   
+   SEEK "students.dat", searchID
+   GETFILE "students.dat", student
+   isFound = TRUE
+   OUTPUT "Student ID : ", student.sID
+   OUTPUT "Student Name: ", student.sName
+   OUTPUT "Student Class: ", student.sClass
+   OUTPUT "Student Fee: ", student.sFee
+ENDIF
+CLOSEFILE "students.dat"
+IF isFound = FALSE THEN OUTPUT "ID not found!!!!"

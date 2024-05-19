@@ -1,0 +1,192 @@
+Serial (Sequential Access) TEXT
+Sequential (Sequential (TEXT), Direct (BINARY))
+Random (Direct Access (BINARY))
+
+Sequential Access
+Direct Access
+
+File Operation:
+Adding
+Searching 
+Edit
+Deleting
+-----------------------------------
+
+//TEXT FILES
+//SEQUENTIAL FILES
+
+//ADDING A SINGLE RECORD
+DECLARE sID : INTEGER //KEY FIELD
+DECLARE sName, sClass : STRING
+DECLARE sFee : REAL
+
+INPUT "Enter student ID: ", sID
+INPUT "Enter student name: ", sName
+INPUT "Enter student class: ", sClass
+INPUT "Enter student fee: ", sFee
+
+OPENFILE "students.txt" FOR WRITE
+WRITEFILE "students.txt", sID
+WRITEFILE "students.txt", SName
+WRITEFILE "students.txt", SClass
+WRITEFILE "students.txt", SFee
+CLOSEFILE "students.txt"
+-----------------------------------------------------------
+
+//ADDING MULTIPLE RECORDS 
+DECLARE sID : INTEGER //KEY FIELD
+DECLARE sName, sClass : STRING
+DECLARE sFee : REAL
+
+OPENFILE "students.txt" FOR APPEND
+sID ← 0
+INPUT "Enter student ID (Enter blank to exit): ", sID
+WHILE sID <> 0
+  INPUT "Enter student name: ", sName
+  INPUT "Enter student class: ", sClass
+  INPUT "Enter student fee: ", sFee
+
+  WRITEFILE "students.txt", sID
+  WRITEFILE "students.txt", SName
+  WRITEFILE "students.txt", SClass
+  WRITEFILE "students.txt", SFee
+
+  sID ← 0
+  INPUT "Enter student ID (Enter blank to exit): ", sID
+ENDWHILE
+CLOSEFILE "students.txt"
+-----------------------------------------------------------------------
+
+//DISPLAY MULTIPLE RECORDS 
+DECLARE sID : INTEGER
+DECLARE sName, sClass : STRING
+DECLARE sFee : REAL
+
+OPENFILE "students.txt" FOR READ
+
+WHILE NOT EOF("students.txt")
+  READFILE "students.txt", SID
+  READFILE "students.txt", SName
+  READFILE "students.txt", SClass
+  READFILE "students.txt", SFee
+
+  OUTPUT "Student ID: ", sID
+  OUTPUT "Student name: ", sName
+  OUTPUT "Student class: ", sClass
+  OUTPUT "Student fee: ", sFee
+ENDWHILE
+CLOSEFILE "students.txt"
+------------------------------------------------------
+
+//SEARCHING A RECORD 
+DECLARE sID, searchID : INTEGER
+DECLARE sName, sClass : STRING
+DECLARE sFee : REAL
+DECLARE isFound : BOOLEAN  //FLAG
+
+isFound = FALSE
+INPUT "Enter ID to search for: ", searchID
+
+OPENFILE "students.txt" FOR READ
+
+WHILE NOT EOF("students.txt") AND isFound = FLASE
+  READFILE "students.txt", sID
+  READFILE "students.txt", SName
+  READFILE "students.txt", SClass
+  READFILE "students.txt", SFee
+
+  IF sID = searchID THEN
+     isFound = TRUE
+     OUTPUT "Student ID: ", sID
+     OUTPUT "Student name: ", sName
+     OUTPUT "Student class: ", sClass
+     OUTPUT "Student fee: ", sFee
+  ENDIF
+  ID sID > searchID THEN Exit Loop
+ENDWHILE
+CLOSEFILE "students.txt"
+IF isFound = FALSE THEN OUTPUT searchID & " is not found in the file!!"
+-------------------------------------------------------------------
+
+//DELETING A RECORD 
+DECLARE sID, searchID : INTEGER
+DECLARE sName, sClass : STRING
+DECLARE sFee : REAL
+DECLARE isFound : BOOLEAN  //FLAG
+
+isFound = FALSE
+
+INPUT "Enter ID to delete a record: ", searchID
+
+OPENFILE "students.txt" FOR READ
+OPENFILE "temp.txt" FOR WRITE
+
+WHILE NOT EOF("students.txt")
+  READFILE "students.txt", SID
+  READFILE "students.txt", SName
+  READFILE "students.txt", SClass
+  READFILE "students.txt", SFee
+
+  IF sID = searchID THEN
+     isFound = TRUE
+  ELSE
+     WRITEFILE "temp.txt", SID
+     WRITEFILE "temp.txt", SName
+     WRITEFILE "temp.txt", SClass
+     WRITEFILE "temp.txt", SFee
+  ENDIF
+ENDWHILE
+CLOSEFILE "students.txt"
+CLOSEFILE "temp.txt"
+
+IF isFound = FALSE THEN OUTPUT searchID & " is not found in the file!!"
+
+DELETEFILE "students.txt"
+RENAMEFILE "temp.txt", "students.txt"
+-------------------------------------------------------------
+
+//EDIT A RECORD 
+DECLARE sID, searchID : INTEGER
+DECLARE sName, sClass, searchName, searchClass : STRING
+DECLARE sFee, searchFee : REAL
+DECLARE isFound : BOOLEAN  //FLAG
+
+isFound = FALSE
+
+INPUT "Enter ID to edit record for: ", searchID
+
+OPENFILE "students.txt" FOR READ
+OPENFILE "temp.txt" FOR WRITE
+
+WHILE NOT EOF("students.txt")
+  READFILE "students.txt", sID
+  READFILE "students.txt", SName
+  READFILE "students.txt", SClass
+  READFILE "students.txt", SFee
+
+  IF sID = searchID THEN
+     INPUT "Enter updated name to edit: ", searchName
+     INPUT "Enter updated class: ", searchClass
+     INPUT "Enter updated fee: ", searchFee
+
+     WRITEFILE "temp.txt", searchID
+     WRITEFILE "temp.txt", searchName
+     WRITEFILE "temp.txt", searchClass
+     WRITEFILE "temp.txt", searchFee
+     
+     isFound = TRUE
+  ELSE
+     WRITEFILE "temp.txt", SID
+     WRITEFILE "temp.txt", SName
+     WRITEFILE "temp.txt", SClass
+     WRITEFILE "temp.txt", SFee
+  ENDIF
+ENDWHILE
+
+CLOSEFILE "students.txt"
+CLOSEFILE "temp.txt"
+
+IF isFound = FALSE THEN OUTPUT searchID & " is not found in the file!!"
+
+DELETEFILE "students.txt"
+RENAMEFILE "temp.txt", "students.txt"
