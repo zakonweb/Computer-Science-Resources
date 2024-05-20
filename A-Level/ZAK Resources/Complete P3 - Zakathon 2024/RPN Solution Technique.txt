@@ -1,0 +1,24 @@
+Converting an infix expression to a postfix expression involves using a stack to temporarily store operators until it's their time to be popped onto the postfix expression. This ensures that operators are processed in their correct precedence.
+
+Here's a step-by-step breakdown of how to convert the infix expression (a-b)*c to postfix:
+
+1. Initialize an empty stack for operators.
+2. Read the infix expression from left to right.
+3. If the current character is an operand (like a, b, or c), write it to the postfix expression.
+4. If the current character is an operator (like +, -, *, or /) or a left parenthesis, push it onto the stack.
+5. If the current character is a right parenthesis, pop operators from the stack and write them to the postfix expression until you encounter a left parenthesis on the stack. Pop and discard the left parenthesis from the stack.
+6. If the current operator has higher precedence than the operator on the top of the stack, push it onto the stack. If it has equal or lower precedence, pop operators from the stack and write them to the postfix expression until an operator with lower precedence or a left parenthesis is encountered on the stack or the stack is empty. Then push the current operator onto the stack.
+7. After processing the entire infix expression, pop any remaining operators from the stack and write them to the postfix expression.
+
+Applying these rules to (a-b)*c:
+
+1. Read '(' – push it onto the stack.
+2. Read 'a' – write it to the postfix expression. Postfix: a
+3. Read '-' – push it onto the stack.
+4. Read 'b' – write it to the postfix expression. Postfix: ab
+5. Read ')' – pop operators from the stack until you encounter a '('. Pop '-' and write it to the postfix expression, then pop and discard '('. Postfix: ab-
+6. Read '*' – since the stack is empty, push '*' onto the stack.
+7. Read 'c' – write it to the postfix expression. Postfix: ab-c
+8. No more characters in the infix expression. Pop '*' from the stack and write it to the postfix expression. Postfix: ab-c*
+
+So, the postfix notation of (a-b)*c is ab-c*.

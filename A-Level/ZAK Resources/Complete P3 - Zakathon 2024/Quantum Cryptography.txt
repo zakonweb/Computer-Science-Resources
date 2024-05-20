@@ -1,0 +1,23 @@
+Quantum Cryptography:
+
+1. Quantum Cryptography Basics:
+   - It's a way to secure communications using the principles of quantum mechanics.
+   - Unlike traditional cryptography, which uses math to encrypt messages, quantum cryptography uses the physical properties of particles like photons.
+
+2. Key Principles of Quantum Mechanics:
+   - Superposition: A particle can exist in multiple states at once.
+   - Entanglement: Two particles can be linked so that the state of one instantly affects the other, regardless of distance.
+
+3. Quantum Key Distribution (QKD):
+   - The most common use of quantum cryptography.
+   - It lets two parties create a secret key for secure communication.
+   - If someone tries to eavesdrop, the key's quantum state changes, alerting the parties.
+
+4. Benefits:
+   - Almost impossible to hack: Interception changes the key's state, revealing eavesdroppers.
+   - Future-proof: Not reliant on complex math, so it's safe against advanced future computers.
+
+5. Drawbacks:
+   - Expensive and complex to implement.
+   - Limited range: Effective only over certain distances.
+   - Sensitive to environmental factors, requiring specialized equipment.
