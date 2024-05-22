@@ -1,0 +1,30 @@
+//Linear Search Algorithm
+
+FUNCTION LinearSearch(arr[], Targ : INTEGER) RETURN INTEGER
+   DECLARE n, count : INTEGER
+   n ← LEN(arr)
+
+   FOR count ← 0 TO n-1
+      IF arr[count] = Targ THEN
+         RETURN count
+      ENDIF
+   NEXT
+
+   RETURN -1
+END FUNCTION
+
+//Main Program
+DECLARE arr : ARRAY [0:10] OF INTEGER
+arr ← [25, 10, 5, 89, 24, 18, 45, 72, 31, 16, 87]
+
+DECLARE val, x : INTEGER
+
+OUTPUT "Enter a value to search for: "
+INPUT val
+
+x ← LinearSearch(arr, val)
+IF x = -1 THEN
+   OUTPUT "Value not found!"
+ELSE
+   OUTPUT "Value found at: " & x
+ENDIF

@@ -1,0 +1,52 @@
+//Circular Queues
+//Global Variables
+DECLARE Q : ARRAY[0:5] OF CHARACTER
+CONSTANT Null = -1
+DECLARE RearP, FrontP, Max, Qsize : INTEGER
+
+PROCEDURE InitliaseQ()
+   DECLARE i : INTEGER
+   FOR i = 0 TO 5
+      Q[i] = '' //None added to Q elements
+   NEXT
+   RearP = Null
+   FrontP = Null
+   Max = 5
+   Qsize = 0
+END PROCEDURE
+
+PROCEDURE Enqueue(data : CHARACTER)
+   IF Qsize = 6 THEN
+      OUTPUT "Overflow occured. No more elemnts can be added."
+   ELSE
+      IF RearP = Max THEN
+        RearP = 0
+      ELSE
+        RearP = RearP + 1
+      ENDIF
+      Q[RearP] = data
+      Qsize = Qsize + 1
+   ENDIF
+END PROCEDURE
+
+FUNCTION Dequeue() : CHARACTER
+   IF Qsize = 0 THEN
+      OUTPUT "Underflow occured. No more elemnts can be removed."
+   ELSE
+      IF FrontP = Max THEN
+        FrontP = 0
+      ELSE
+        FrontP = FrontP + 1
+      ENDIF
+      data = Q[FrontP] 
+      Q[FrontP] = ''
+      Qsize = Qsize - 1
+   ENDIF
+END FUNCTION
+
+
+
+
+
+
+

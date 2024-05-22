@@ -1,0 +1,41 @@
+//Pseudocode for the implementation of Stack
+//Global Space
+//Stack Declaration
+DECLARE Stack : ARRAY[0:5] OF CHARACTER
+
+//Null Pointer
+CONSTANT Null = -1
+
+//Top of stack Pointer
+DECLARE Top : INTEGER
+
+PROCEDURE InitilaseStack()
+   DECLARE i : INTEGER
+
+   FOR i = 0 TO LEN(Stack) -1
+     Stack[i] = ''
+   NEXT
+
+   Top = Null
+END PROCEDURE
+
+PROCEDURE Push(data : CHARACTER)
+   IF top = LEN(Stack)-1 THEN
+      OUTPUT "Overflow occured. No more elements can be added."
+   ELSE
+      Top = Top + 1
+      Stack[Top] = data
+   ENDIF
+END PROCEDURE
+
+FUNCTION Pop() : CHARACTER
+   DECLARE data : CHARCTER
+   IF Top = Null THEN
+      OUTPUT "Undeflow occured. No more elemnts can be removed."
+      RETURN ''
+   ELSE
+      data = Stack[Top]
+      Top = Top -1
+      RETURN data
+   ENDIF
+END FUNCTION

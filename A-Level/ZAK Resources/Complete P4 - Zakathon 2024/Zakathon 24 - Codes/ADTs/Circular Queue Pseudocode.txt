@@ -1,0 +1,47 @@
+//Circular Q
+//GLOBAL SPACE
+DECLARE Q : ARRAY [0:7] OF CHARACTER
+DECLARE head, tail, Qsize, Qlen : INTEGER
+
+PROCEDURE initQ():
+   DECLARE i : INTEGER
+   FOR i = 0 TO 7
+       Q[i] = ''
+   NEXT i
+
+   head = -1
+   tail = -1
+   Qsize = 0
+   Qlen = len(Q)
+END PROCEDURE
+
+PROCEDURE Enqueue(data : CHARACTER)
+   IF Qsize = Qlen THEN
+      OUTPUT "Overflow. Queue is full."
+   ELSE
+      IF tail = Qlen -1 THEN //tail at UB?
+         tail = 0
+      ELSE
+         tail = tail + 1
+      END IF
+      Q[tail] = data
+      QSize = QSize + 1
+   END IF
+END PROCEDURE
+
+FUNCTION Dequeue() : CHARACTER
+   DECLARE data : CHARACTER
+   data = ''
+   IF Qsize = 0 THEN
+      OUTPUT "Underflow. Queue is empty."
+   ELSE
+      IF head = Qlen -1 THEN //head at UB?
+         head = 0
+      ELSE
+         head = head + 1
+      END IF
+      data = Q[head]
+   END IF
+   
+   RETURN data
+END FUNCTION

@@ -1,0 +1,120 @@
+// Psuedocode for orderly linked list 
+
+// UDT for the linked list node
+TYPE LLnode
+    DECLARE data : CHARACTER
+    DECLARE next : INTEGER
+END TYPE
+
+// Global variables and Array of nodes
+DECLARE list1 : ARRAY[0:5] OF LLnode
+DECLARE head, tail, free : INTEGER
+
+// Initialize linked list
+PROCEDURE init()
+    DECLARE i : INTEGER
+    free = 0
+    head = -1
+    tail = -1
+    FOR i = 0 TO 5
+        list1[i].next = i + 1
+    END FOR
+    SET list1[5].next = -1
+END PROCEDURE
+
+// Insertion using following 5 selection steps:
+// 1. if new node is less than start node, make new node the new start node
+// 2. if new node is greater than end node, make new node the new end node
+// 3. if new node is in between start and end node, 
+//    find the node that is less than new node and the node that is greater than
+      new node and insert new node between them
+// 4. if free points to null, ouput "overflow, no free nodes"
+// 5. if head points to null, insert new node at head
+
+// Insert new node into linked list
+PROCEDURE insert(value : CHARACTER)
+    DECLARE newNode : INTEGER
+    IF free = -1 THEN // list is full
+        OUTPUT "Overflow, no free nodes"
+    ELSE
+        newNode = free
+        free = list1[free].next
+        list1[newNode].data = value
+        IF head = -1 THEN // list is empty
+            head = newNode
+            tail = newNode
+            list1[newNode].next = -1
+
+        // if new node is less than start node, make new node the new start node
+        ELSE IF list1[newNode].data < list1[head].data THEN
+            list1[newNode].next = head
+            head = newNode
+
+        // if new node is greater than end node, make new node the new end node
+        ELSE IF list1[newNode].data > list1[tail].data THEN
+            list1[tail].next = newNode
+            tail = newNode
+            list1[newNode].next = -1
+        ELSE
+            DECLARE prev, curr : INTEGER
+            prev = head
+            curr = list1[head].next
+            WHILE list1[curr].data < list1[newNode].data
+                prev = curr
+                curr = list1[curr].next
+            END WHILE
+            list1[prev].next = newNode
+            list1[newNode].next = curr
+        END IF
+    END IF
+END PROCEDURE
+
+
+// Delete a node from the linked list
+FUNCTION delete(value : CHARACTER) : BOOLEAN
+    DECLARE prev, curr : INTEGER
+    DECLARE found : BOOLEAN
+    
+    IF head = -1 THEN // list is empty
+	OUTPUT "Underflow. No node to be deleted."
+    ELSE
+	curr = head
+	prev = -1
+	found = FALSE
+		
+	// Search for the node to delete
+	WHILE curr != -1 AND found = FALSE
+	    IF list1[curr].data = value THEN
+		found = TRUE
+	    ELSE
+		prev = curr
+		curr = list1[curr].next
+	    END IF
+	END WHILE
+		
+	// If the node was not found
+	IF found = FALSE THEN
+	    RETURN FALSE
+	END IF
+		
+	// If the node to delete is the head
+	IF curr = head THEN
+	   head = list1[curr].next
+	ELSE
+	   // If the node to delete is the tail
+	  IF curr = tail THEN
+	     tail = prev
+	     list1[prev].next = -1
+	  ELSE
+	     // Remove the node from somewhere in the middle
+	     list1[prev].next = list1[curr].next
+	  END IF
+	END IF
+		
+	// Add the deleted node to the front of the free list
+	list1[curr].next = free
+	free = curr
+		
+	RETURN TRUE
+    ENDIF
+END FUNCTION

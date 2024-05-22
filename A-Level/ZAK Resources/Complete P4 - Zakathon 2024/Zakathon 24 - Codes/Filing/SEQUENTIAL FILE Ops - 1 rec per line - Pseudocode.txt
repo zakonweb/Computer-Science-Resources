@@ -1,0 +1,182 @@
+//Sequential Text File One record per line
+//Adding a Single Record
+DECLARE sID : INTEGER
+DECLARE sName, sClass : STRING
+DECLARE sFee : REAL
+
+INPUT "Enter student ID: ", sID
+INPUT "Enter student name: ", sName
+INPUT "Enter student class: ", sClass
+INPUT "Enter student fee: ", sFee
+
+OPENFILE "students.txt" FOR WRITE
+WRITEFILE "students.txt", STR(sID) + "," + sName + "," + sClass + "," + STR(sFee)
+CLOSEFILE "students.txt"
+
+//Adding Multiple Records
+DECLARE sID : INTEGER
+DECLARE sName, sClass : STRING
+DECLARE sFee : REAL
+DECLARE more : CHARACTER
+more = 'Y'
+
+OPENFILE "students.txt" FOR APPEND
+
+WHILE more = 'Y'
+  INPUT "Enter student ID: ", sID
+  INPUT "Enter student name: ", sName
+  INPUT "Enter student class: ", sClass
+  INPUT "Enter student fee: ", sFee
+
+  WRITEFILE "students.txt", STR(sID) + "," + sName + "," + sClass + "," + STR(sFee)
+
+  INPUT "Do you want to enter another record: (Y/N) ", more
+END WHILE
+CLOSEFILE "students.txt"
+
+
+//Displaying Multiple Records
+DECLARE record, sName, sClass : STRING
+DECLARE sID, pos1, pos2, pos3 : INTEGER
+DECLARE sFee : REAL
+
+OPENFILE "students.txt" FOR READ
+
+WHILE NOT EOF("students.txt")
+  READFILE "students.txt", record
+
+  pos1 = LOCATE(record, ',')
+  sID = VAL(LEFT(record, pos1 - 1))
+
+  pos2 = LOCATE(pos1 + 1, record, ',')
+  sName = MID(record, pos1 + 1, pos2 - pos1 - 1)
+
+  pos3 = LOCATE(pos2 + 1, record, ',')
+  sClass = MID(record, pos2 + 1, pos3 - pos2 - 1)
+
+  sFee = VAL(RIGHT(record, LENGTH(record) - pos3))
+
+  OUTPUT "Student ID: ", sID
+  OUTPUT "Student name: ", sName
+  OUTPUT "Student class: ", sClass
+  OUTPUT "Student fee: ", sFee
+END WHILE
+CLOSEFILE "students.txt"
+
+
+//Searching a Record
+DECLARE record, sName, sClass : STRING
+DECLARE sID, searchID, pos1, pos2, pos3 : INTEGER
+DECLARE sFee : REAL
+DECLARE isFound : BOOLEAN  //FLAG
+
+isFound = FALSE
+INPUT "Enter ID to search for: ", searchID
+
+OPENFILE "students.txt" FOR READ
+
+WHILE NOT EOF("students.txt") AND NOT isFound AND sID < searchID
+  READFILE "students.txt", record
+
+  pos1 = LOCATE(record, ',')
+  sID = VAL(LEFT(record, pos1 - 1))
+
+  IF sID = searchID THEN
+    pos2 = LOCATE(pos1 + 1, record, ',')
+    sName = MID(record, pos1 + 1, pos2 - pos1 - 1)
+
+    pos3 = LOCATE(pos2 + 1, record, ',')
+    sClass = MID(record, pos2 + 1, pos3 - pos2 - 1)
+
+    sFee = VAL(RIGHT(record, LENGTH(record) - pos3))
+
+    OUTPUT "Student ID: ", sID
+    OUTPUT "Student name: ", sName
+    OUTPUT "Student class: ", sClass
+    OUTPUT "Student fee: ", sFee
+    isFound = TRUE
+  ENDIF
+END WHILE
+CLOSEFILE "students.txt"
+
+IF NOT isFound THEN
+  OUTPUT "ID " + STR(searchID) + " is not found in file!!"
+ENDIF
+
+//Deleting a Record
+DECLARE record, sName, sClass : STRING
+DECLARE sID, searchID, pos1, pos2, pos3 : INTEGER
+DECLARE sFee : REAL
+DECLARE isFound : BOOLEAN
+
+isFound = FALSE
+INPUT "Enter ID to delete: ", searchID
+
+OPENFILE "students.txt" FOR READ
+OPENFILE "temp.txt" FOR WRITE
+
+WHILE NOT EOF("students.txt")
+  READFILE "students.txt", record
+
+  pos1 = LOCATE(record, ',')
+  sID = VAL(LEFT(record, pos1 - 1))
+
+  IF sID <> searchID THEN
+    WRITEFILE "temp.txt", record
+  ELSE
+    isFound = TRUE
+  ENDIF
+END WHILE
+
+CLOSEFILE "students.txt"
+CLOSEFILE "temp.txt"
+
+IF NOT isFound THEN
+  OUTPUT "ID " + STR(searchID) + " is not found in file!!"
+ELSE
+  DELETEFILE "students.txt"
+  RENAMEFILE "temp.txt", "students.txt"
+ENDIF
+
+//Editing a Record
+DECLARE record, sName, sClass, newSName, newSClass : STRING
+DECLARE sID, searchID, newSID, pos1, pos2, pos3 : INTEGER
+DECLARE sFee, newSFee : REAL
+DECLARE isFound : BOOLEAN
+
+isFound = FALSE
+INPUT "Enter ID to edit: ", searchID
+
+OPENFILE "students.txt" FOR READ
+OPENFILE "temp.txt" FOR WRITE
+
+WHILE NOT EOF("students.txt")
+  READFILE "students.txt", record
+
+  pos1 = LOCATE(record, ',')
+  sID = VAL(LEFT(record, pos1 - 1))
+
+  IF sID = searchID THEN
+    INPUT "Enter updated ID: ", newSID
+    INPUT "Enter updated name: ", newSName
+    INPUT "Enter updated class: ", newSClass
+    INPUT "Enter updated fee: ", newSFee
+
+    isFound = TRUE
+    WRITEFILE "temp.txt", STR(newSID) + "," + newSName + "," + newSClass + "," + STR(newSFee)
+  ELSE
+    WRITEFILE "temp.txt", record
+  ENDIF
+END WHILE
+
+CLOSEFILE "students.txt"
+CLOSEFILE "temp.txt"
+
+IF NOT isFound THEN
+  OUTPUT "ID " + STR(searchID) + " is not found in file!!"
+ELSE
+  DELETEFILE "students.txt"
+  RENAMEFILE "temp.txt", "students.txt"
+ENDIF
+
+

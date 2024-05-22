@@ -1,0 +1,164 @@
+Text Files Over Sequential Access Medium:
+1. Serial files
+2. Sequential files
+
+File Operation:
+Adding
+Displaying
+Searching 
+Edit
+Deleting
+-----------------------------------
+
+//TEXT FILES
+//SERIAL FILES
+
+//ADDING A SINGLE RECORD
+DECLARE sName, sClass : STRING
+DECLARE sFee : REAL
+
+INPUT "Enter student name: ", sName
+INPUT "Enter student class: ", sClass
+INPUT "Enter student fee: ", sFee
+
+OPENFILE "students.txt" FOR WRITE
+WRITEFILE "students.txt", sName
+WRITEFILE "students.txt", sClass
+WRITEFILE "students.txt", sFee
+CLOSEFILE "students.txt"
+
+//ADDING MULTIPLE RECORDS 
+DECLARE sName, sClass : STRING
+DECLARE sFee : REAL
+DECLARE more : CHARACTER
+more = 'Y'
+
+OPENFILE "students.txt" FOR APPEND
+
+WHILE more = 'Y'
+  INPUT "Enter student name: ", sName
+  INPUT "Enter student class: ", sClass
+  INPUT "Enter student fee: ", sFee
+
+  WRITEFILE "students.txt", SName
+  WRITEFILE "students.txt", SClass
+  WRITEFILE "students.txt", SFee
+
+  INPUT "Do you want to enter another record: (Y/N) ", more
+END WHILE
+CLOSEFILE "students.txt"
+
+
+//DISPLAY MULTIPLE RECORDS 
+DECLARE sName, sClass : STRING
+DECLARE sFee : REAL
+
+OPENFILE "students.txt" FOR READ
+
+WHILE NOT EOF("students.txt")
+  READFILE "students.txt", SName
+  READFILE "students.txt", SClass
+  READFILE "students.txt", SFee
+
+  OUTPUT "Student name: ", sName
+  OUTPUT "Student class: ", sClass
+  OUTPUT "Student fee: ", sFee
+END WHILE
+CLOSEFILE "students.txt"
+
+//SEARCHING A RECORD 
+DECLARE sName, sClass, searchName : STRING
+DECLARE sFee : REAL
+DECLARE isFound : BOOLEAN  //FLAG
+
+isFound = FALSE
+INPUT "Enter name to search for: ", searchName
+
+OPENFILE "students.txt" FOR READ
+
+WHILE NOT EOF("students.txt") //AND isFound = FLASE
+  READFILE "students.txt", SName
+  READFILE "students.txt", SClass
+  READFILE "students.txt", SFee
+
+  IF SName = searchName THEN
+     isFound = TRUE
+     OUTPUT "Student name: ", sName
+     OUTPUT "Student class: ", sClass
+     OUTPUT "Student fee: ", sFee
+  ENDIF
+END WHILE
+CLOSEFILE "students.txt"
+IF isFound = FALSE THEN OUTPUT searchName & " is not found in file!!"
+
+
+//DELETING A RECORD 
+DECLARE sName, sClass, searchName : STRING
+DECLARE sFee : REAL
+DECLARE isFound : BOOLEAN  //FLAG
+
+isFound = FALSE
+INPUT "Enter name to delete: ", searchName
+OPENFILE "students.txt" FOR READ
+OPENFILE "temp.txt" FOR WRITE
+
+WHILE NOT EOF("students.txt")
+  READFILE "students.txt", SName
+  READFILE "students.txt", SClass
+  READFILE "students.txt", SFee
+
+  IF SName = searchName THEN
+     isFound = TRUE
+  ELSE
+     WRITEFILE "temp.txt", SName
+     WRITEFILE "temp.txt", SClass
+     WRITEFILE "temp.txt", SFee
+  ENDIF
+ENDWHILE
+
+CLOSEFILE "students.txt"
+CLOSEFILE "temp.txt"
+IF isFound = FALSE THEN OUTPUT searchName & " is not found in file!!"
+
+DELETEFILE "students.txt"
+RENAMEFILE "temp.txt", "students.txt"
+
+
+//EDIT A RECORD 
+DECLARE sName, sClass, searchName, searchClass : STRING
+DECLARE sFee, searchFee : REAL
+DECLARE isFound : BOOLEAN  //FLAG
+
+isFound = FALSE
+INPUT "Enter name to edit: ", searchName
+
+OPENFILE "students.txt" FOR READ
+OPENFILE "temp.txt" FOR WRITE
+
+WHILE NOT EOF("students.txt")
+  READFILE "students.txt", SName
+  READFILE "students.txt", SClass
+  READFILE "students.txt", SFee
+
+  IF SName = searchName THEN
+     INPUT "Enter updated name to edit: ", searchName
+     INPUT "Enter updated class: ", searchClass
+     INPUT "Enter updated fee: ", searchFee
+
+     isFound = TRUE
+     WRITEFILE "temp.txt", searchName
+     WRITEFILE "temp.txt", searchClass
+     WRITEFILE "temp.txt", searchFeeFee
+  ELSE
+     WRITEFILE "temp.txt", SName
+     WRITEFILE "temp.txt", SClass
+     WRITEFILE "temp.txt", SFee
+  ENDIF
+ENDWHILE
+
+CLOSEFILE "students.txt"
+CLOSEFILE "temp.txt"
+IF isFound = FALSE THEN OUTPUT searchName & " is not found in file!!"
+
+DELETEFILE "students.txt"
+RENAMEFILE "temp.txt", "students.txt"

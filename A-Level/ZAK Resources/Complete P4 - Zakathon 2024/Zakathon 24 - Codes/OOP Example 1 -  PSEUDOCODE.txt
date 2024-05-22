@@ -1,0 +1,49 @@
+CLASS GameElement
+  PRIVATE PositionX : INTEGER
+  PRIVATE PositionY : INTEGER
+  PRIVATE Width : INTEGER
+  PRIVATE Height : INTEGER
+  PRIVATE ImageFileName : STRING
+
+  PUBLIC PROCEDURE New(X, Y, W, H : INETGER, IFN : STRING)
+     Me.PositionX = X
+     Me.PositionY = Y
+     Me.Width = W
+     Me.Height = H
+     Me.ImageFileName = IFN
+  END PROCEDURE
+
+  PUBLIC FUNCTION GetDetails() RETURNS STRING
+     DECLARE Details : STRING
+     Details = "PositionX: " & Me.PositionX & " PositionY: " & _
+               Me.PositionY ....
+     RETURN Details
+  END FUNCTION
+END CLASS
+
+CLASS Scenery INHERITS GameElement
+   PRIVATE CauseDamage : BOOLEAN
+   PRIVATE DamagePoints : INTEGER
+
+  PUBLIC PROCEDURE New(X, Y, W, H : INETGER, IFN : STRING, CD : BOOLEAN, DP : INTEGER)
+     SUPER.New(X, Y, W, H, IFN)
+     Me.CauseDamage = CD
+     Me.DamagePoints = DP
+  END PROCEDURE
+
+  PUBLIC FUNCTION GiveDamagePoints() RETURNS INTEGER
+     IF Me.CauseDamage = TRUE THEN
+        RETURN Me.DamagePoints
+     ELSE
+        RETURN 0
+     ENDIF
+  END FUNCTION   
+
+  PUBLIC FUNCTION GetScenery() RETURNS STRING
+     DECLARE Details : STRING
+     Details = SUPER.GetDetails() & " CauseDamage: " & Me.CauseDamage & ....
+     RETURN Details
+  END FUNCTION
+END CLASS
+
+GiftBox = New Scenery(150, 150, 50, 75, "box.png", TRUE, 50)

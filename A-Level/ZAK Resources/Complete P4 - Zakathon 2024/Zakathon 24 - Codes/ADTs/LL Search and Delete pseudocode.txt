@@ -1,0 +1,36 @@
+//CONCEPTUAL LL CODE
+PROCEDURE LLsearch(Val)
+  CN=SP
+  WHILE LL[CN].Data <> Val AND CN <> Null
+    CN=LL[CN].Ptr
+  END WHILE
+
+  IF CN <> Null THEN
+     OUTPUT "Found!"
+  ELSE
+     OUTPUT "Not FOund!"
+  END IF
+END PROCEDURE
+
+PROCEDURE LLdelete(Val)
+  CN=SP
+  PN=Null
+  WHILE LL[CN].Data <> Val AND CN <> Null
+    PN=CN
+    CN=LL[CN].Ptr
+  END WHILE
+
+  IF CN <> Null THEN
+    Temp=Free
+    Temp1=LL[CN].Ptr
+    Free=CN
+    LL[Free].Ptr=Temp
+    IF PN=Null THEN
+      SP=Temp1
+    ELSE
+      LL[PN].Ptr=Temp1
+    END IF
+  ELSE
+    OUTPUT Val, "not found!"
+  END IF
+END PROCEDURE

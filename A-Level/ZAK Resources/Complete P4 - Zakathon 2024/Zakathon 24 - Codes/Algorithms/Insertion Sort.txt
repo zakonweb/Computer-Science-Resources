@@ -1,0 +1,33 @@
+"""
+// insertion sort pseudocode
+DECLARE i,j, key : INTEGER
+i = 0
+j = 0
+key = 0
+DECLARE Arr : ARRAY[0:7] OF INTEGER
+Arr = [3,9,5,2,6,8,4,0]
+FOR j = 1 TO LENGTH(Arr) - 1
+    key = Arr[j]
+    i = j - 1
+    WHILE i >= 0 AND Arr[i] > key
+        Arr[i+1] = Arr[i]
+        i = i - 1
+    END WHILE
+    Arr[i+1] = key //INSERTION
+NEXT j
+"""
+arr = [3,9,5,2,6,8,4,0]
+
+# insertion sort python implementation
+def insertion_sort():
+    for j in range(1, len(arr)):
+        key = arr[j]
+        i = j - 1
+        while i >= 0 and arr[i] > key:
+            arr[i+1] = arr[i]
+            i = i - 1
+        arr[i+1] = key
+
+print("Before insertion sort: ", arr)
+insertion_sort()
+print("After insertion sort: ", arr)

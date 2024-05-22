@@ -1,0 +1,51 @@
+//Stack with UDT Pseudocode
+//Global Space
+//User defined data type, UDT
+TYPE stRecord
+   DECLARE stID : INTEGER
+   DECLARE stName : STRING
+   DECLARE stFee : REAL
+END TYPE
+
+DECLARE Stack : ARRAY [0:5] OF stRecord
+DECLARE TopOfStack, Null : INTEGER
+Null = -1
+TopOfStack = Null
+
+PROCEDURE Iinitialise()
+   DECLARE i : INTEGER
+   i=0
+   For i = 0 TO LEN(Stack)-1
+     Stack[i].stID = 0
+     Stack[i].stName = ""
+     Stack[i].stFee = 0.0
+   NEXT
+   TopOfStack = Null
+END PROCEDURE
+
+PROCEDURE Push(data)
+    IF TopOfSTack = LEN(Stack)-1 THEN
+       OUTPUT "Overflow occured! Data cannot be pushed."
+    ELSE
+       TopOfStack = TopOfStack +1
+       Stack[TopOfStack].stID = data.stID
+       Stack[TopOfStack].stName = data.stName
+       Stack[TopOfStack].stFee = data.stFee
+    ENDIF
+END PROCEDURE
+
+FUNCTION Pop() RETURNS stRecord
+    DECLARE data : stRecord
+    IF TopOfStack = Null THEN
+      data.stID = Null
+       RETURN data
+    ELSE
+       data.stID = Stack[TopOfStack].stID
+       data.stName = Stack[TopOfStack].stName
+       data.stFee = Stack[TopOfStack].stFee
+
+       TopOfStack = TOpOfSTack -1
+       RETURN data
+    ENDIF
+END FUNCTION
+

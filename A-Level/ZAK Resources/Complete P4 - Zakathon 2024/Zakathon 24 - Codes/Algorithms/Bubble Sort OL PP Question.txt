@@ -1,0 +1,16 @@
+DECLARE Names : ARRAY [1:4] OF STRING
+DECLARE Count, Flag : INTEGER
+DECLARE Temp AS STRING
+Names = ["Jamal", "Amir", "Eve","Tara"]
+REPEAT
+  Flag = 0
+  Count = 1
+  FOR Count = 1 TO 3 
+     IF Name[Count]> Name[Count + 1] THEN
+        Temp = Name[Count]
+        Name[Count] = Name[Count+1]
+        Name[Count+1] = Temp
+        Flag = 1
+     ENDIF
+  NEXT
+UNTIL Flag = 0

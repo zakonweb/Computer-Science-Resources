@@ -1,0 +1,16 @@
+Function binarySearch (thisArr() As Char, UB As Int, LB As Int, Value As Char) As Integer
+Dim middle As Integer
+
+If LB > UB Then
+   Return -1 'Not FOund
+
+Else
+
+   middle = Int((UB + LB) / 2)
+
+   IF thisArr(middle) = Value Then Return middle
+   IF thisArr(middle) > Value Then Return binarySearch(thisArr, middle - 1, LB, Value)
+   IF thisArr(middle) < Value Then Return binarySearch(thisArr, UB, middle + 1, Value)
+
+End If
+End Function

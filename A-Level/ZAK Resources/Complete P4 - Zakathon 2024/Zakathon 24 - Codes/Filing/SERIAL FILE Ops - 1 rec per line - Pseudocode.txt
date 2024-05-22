@@ -1,0 +1,166 @@
+//Adding a Single Record
+DECLARE sName, sClass : STRING
+DECLARE sFee : REAL
+
+INPUT "Enter student name: ", sName
+INPUT "Enter student class: ", sClass
+INPUT "Enter student fee: ", sFee
+
+OPENFILE "students.txt" FOR WRITE
+WRITEFILE "students.txt", sName + "," + sClass + "," + STR(sFee)
+CLOSEFILE "students.txt"
+
+//Adding Multiple Records
+DECLARE sName, sClass : STRING
+DECLARE sFee : REAL
+DECLARE more : CHARACTER
+more = 'Y'
+
+OPENFILE "students.txt" FOR APPEND
+
+WHILE more = 'Y'
+  INPUT "Enter student name: ", sName
+  INPUT "Enter student class: ", sClass
+  INPUT "Enter student fee: ", sFee
+
+  WRITEFILE "students.txt", sName + "," + sClass + "," + STR(sFee)
+
+  INPUT "Do you want to enter another record: (Y/N) ", more
+END WHILE
+CLOSEFILE "students.txt"
+
+//Displaying Multiple Records
+DECLARE record, sName, sClass : STRING
+DECLARE sFee : REAL
+DECLARE pos1, pos2 : INTEGER
+
+OPENFILE "students.txt" FOR READ
+
+WHILE NOT EOF("students.txt")
+  READFILE "students.txt", record
+
+  pos1 = LOCATE(record, ',')
+  sName = LEFT(record, pos1 - 1)
+
+  pos2 = LOCATE(pos1 + 1, record, ',')
+  sClass = MID(record, pos1 + 1, pos2 - pos1 - 1)
+
+  sFee = RIGHT(record, LENGTH(record) - pos2)
+
+  OUTPUT "Student name: ", sName
+  OUTPUT "Student class: ", sClass
+  OUTPUT "Student fee: ", sFee
+END WHILE
+CLOSEFILE "students.txt"
+
+//Searching a Record
+DECLARE record, sName, sClass, searchName : STRING
+DECLARE sFee : REAL
+DECLARE pos1, pos2 : INTEGER
+DECLARE isFound : BOOLEAN  //FLAG
+
+isFound = FALSE
+INPUT "Enter name to search for: ", searchName
+
+OPENFILE "students.txt" FOR READ
+
+WHILE NOT EOF("students.txt") //AND NOT isFound
+  READFILE "students.txt", record
+
+  pos1 = LOCATE(record, ',')
+  sName = LEFT(record, pos1 - 1)
+
+  IF sName = searchName THEN
+    pos2 = LOCATE(pos1 + 1, record, ',')
+    sClass = MID(record, pos1 + 1, pos2 - pos1 - 1)
+
+    sFee = RIGHT(record, LENGTH(record) - pos2)
+
+    OUTPUT "Student name: ", sName
+    OUTPUT "Student class: ", sClass
+    OUTPUT "Student fee: ", sFee
+    isFound = TRUE
+  ENDIF
+END WHILE
+CLOSEFILE "students.txt"
+
+IF NOT isFound THEN
+  OUTPUT searchName + " is not found in file!!"
+ENDIF
+
+//Deleting a Record
+DECLARE record, sName, sClass, searchName : STRING
+DECLARE sFee : REAL
+DECLARE pos1, pos2 : INTEGER
+DECLARE isFound : BOOLEAN
+
+isFound = FALSE
+INPUT "Enter name to delete: ", searchName
+
+OPENFILE "students.txt" FOR READ
+OPENFILE "temp.txt" FOR WRITE
+
+WHILE NOT EOF("students.txt")
+  READFILE "students.txt", record
+
+  pos1 = LOCATE(record, ',')
+  sName = LEFT(record, pos1 - 1)
+
+  IF sName <> searchName THEN
+    WRITEFILE "temp.txt", record
+  ELSE
+    isFound = TRUE
+  ENDIF
+END WHILE
+
+CLOSEFILE "students.txt"
+CLOSEFILE "temp.txt"
+
+IF NOT isFound THEN
+  OUTPUT searchName + " is not found in file!!"
+ELSE
+  DELETEFILE "students.txt"
+  RENAMEFILE "temp.txt", "students.txt"
+ENDIF
+
+
+//Editing a Record
+DECLARE record, sName, sClass, searchName, newSName, newSClass : STRING
+DECLARE sFee, newSFee : REAL
+DECLARE pos1, pos2 : INTEGER
+DECLARE isFound : BOOLEAN
+
+isFound = FALSE
+INPUT "Enter name to edit: ", searchName
+
+OPENFILE "students.txt" FOR READ
+OPENFILE "temp.txt" FOR WRITE
+
+WHILE NOT EOF("students.txt")
+  READFILE "students.txt", record
+
+  pos1 = LOCATE(record, ',')
+  sName = LEFT(record, pos1 - 1)
+
+  IF sName = searchName THEN
+    INPUT "Enter updated name: ", newSName
+    INPUT "Enter updated class: ", newSClass
+    INPUT "Enter updated fee: ", newSFee
+
+    isFound = TRUE
+    WRITEFILE "temp.txt", newSName + "," + newSClass + "," + STR(newSFee)
+  ELSE
+    WRITEFILE "temp.txt", record
+  ENDIF
+END WHILE
+
+CLOSEFILE "students.txt"
+CLOSEFILE "temp.txt"
+
+IF NOT isFound THEN
+  OUTPUT searchName + " is not found in file!!"
+ELSE
+  DELETEFILE "students.txt"
+  RENAMEFILE "temp.txt", "students.txt"
+ENDIF
+
